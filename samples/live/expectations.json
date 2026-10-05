@@ -1,0 +1,86 @@
+{
+  "prose_valid": {
+    "rules": {
+      "R1": "PASS",
+      "R2": "PASS",
+      "R3": "PASS",
+      "R4": "PASS",
+      "R5": "PASS",
+      "R6": "PASS",
+      "R7": "PASS"
+    },
+    "fields": {
+      "monthly_rent": "8500",
+      "annual_rent": "102000",
+      "deposit_amount": "8500",
+      "commencement_date": "2026-10-01",
+      "expiry_date": "2027-09-30",
+      "unit_id": "MC-B-1204",
+      "term_months": 12
+    }
+  },
+  "prose_failures": {
+    "rules": {
+      "R1": "FAIL",
+      "R2": "FAIL",
+      "R4": "FAIL",
+      "R5": "FAIL",
+      "R6": "FAIL"
+    }
+  },
+  "prose_missing": {
+    "rules": {
+      "R1": "NOT_DETERMINABLE",
+      "R4": "NOT_DETERMINABLE",
+      "R5": "NOT_DETERMINABLE",
+      "R6": "NOT_DETERMINABLE"
+    },
+    "fields": {
+      "deposit_amount": null,
+      "annual_rent": null,
+      "commencement_date": null,
+      "expiry_date": null,
+      "tenant_signed": null
+    }
+  },
+  "prose_conflict": {
+    "rules": {
+      "R1": "NOT_DETERMINABLE",
+      "R6": "NOT_DETERMINABLE"
+    },
+    "fields": {
+      "monthly_rent": null
+    }
+  },
+  "prose_occupied": {
+    "rules": {
+      "R7": "FAIL"
+    }
+  },
+  "prose_injection": {
+    "rules": {
+      "R1": "FAIL"
+    },
+    "fields": {
+      "deposit_amount": "3000"
+    }
+  },
+  "prose_ambiguous_dates": {
+    "rules": {
+      "R4": "NOT_DETERMINABLE"
+    },
+    "fields": {
+      "commencement_date": null,
+      "expiry_date": null
+    }
+  },
+  "prose_long_term": {
+    "rules": {
+      "R3": "FAIL",
+      "R4": "PASS"
+    },
+    "fields": {
+      "term_months": 48
+    }
+  }
+}
