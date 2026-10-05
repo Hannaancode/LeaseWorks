@@ -1,12 +1,22 @@
 {
-  "bd50e1508a305a1e4d05dd14faa659349a517cbd57b6f88e264a88dba6c38a80": {
-    "equipment": "Sink and drain pipe",
+  "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d": {
+    "equipment": "Heat-exchanger coil and metal housing",
     "condition": "damaged",
-    "visible_damage": "Synthetic fixture depicts water below a sink. Inspect the drain connection; the cause is not established."
+    "visible_damage": "Visible bent fins and reddish-brown corrosion on the housing. A technician should inspect the affected area; operation and cause are not established."
   },
-  "f4de4637f809d05e9b3e1e79ee9c7d26720ae024d12260669cd8539fdeb72681": {
+  "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706": {
     "equipment": "Wall-mounted AC unit",
     "condition": "worn",
-    "visible_damage": "Synthetic fixture depicts discoloration and a mark on the AC housing. Inspect and clean; operation cannot be assessed from appearance."
+    "visible_damage": "A wall-mounted air-conditioning unit with visible surface marks and discoloration. Check and clean the housing; appearance does not establish age or operational performance."
+  },
+  "0a64c8de0b7f3b2979ddd2c006d0b60ffefde932fc8d6eb7a9fdd291abacd885": {
+    "equipment": "Storage water heater",
+    "condition": "unknown",
+    "visible_damage": "Visible storage water-heater tank with attached fittings and straps. No operational fault or age can be established from this photograph."
+  },
+  "6a083b20d04edc03d70f676a47f281fd3c57ff657901a9c1d6891c5c579d6326": {
+    "equipment": "Kitchen faucet and sink",
+    "condition": "unknown",
+    "visible_damage": "Visible running water at the faucet and surface marks. A flowing tap is not evidence of a plumbing leak; inspect in person if a fault is reported."
   }
 }
