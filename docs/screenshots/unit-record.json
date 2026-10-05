@@ -10,7 +10,7 @@
   "building": "Tower B",
   "building_id": "MC-B",
   "location": "Lusail Marina District, Doha",
-  "active_lease_id": "98691588ef51468b83691115cd59ae4d",
+  "active_lease_id": "4c201665337d4717a1a9c7439e04bbef",
   "leases": [
     {
       "fields": {
@@ -24,6 +24,12 @@
               "location": "Line 2",
               "start": 0,
               "end": 38
+            }
+          ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s2",
+              "quote": "Landlord: Marina Crest Holdings W.L.L."
             }
           ],
           "explanation": "Offline sample-label extraction; review against the source.",
@@ -44,6 +50,12 @@
               "end": 25
             }
           ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s3",
+              "quote": "Tenant: Sample Tenant One"
+            }
+          ],
           "explanation": "Offline sample-label extraction; review against the source.",
           "invalid": false,
           "decision": "accepted",
@@ -60,6 +72,12 @@
               "location": "Line 4",
               "start": 0,
               "end": 18
+            }
+          ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s4",
+              "quote": "Unit ID: MC-B-1204"
             }
           ],
           "explanation": "Offline sample-label extraction; review against the source.",
@@ -80,6 +98,12 @@
               "end": 29
             }
           ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s5",
+              "quote": "Commencement date: 2026-10-01"
+            }
+          ],
           "explanation": "Offline sample-label extraction; review against the source.",
           "invalid": false,
           "decision": "accepted",
@@ -96,6 +120,12 @@
               "location": "Line 6",
               "start": 0,
               "end": 23
+            }
+          ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s6",
+              "quote": "Expiry date: 2027-09-30"
             }
           ],
           "explanation": "Offline sample-label extraction; review against the source.",
@@ -116,6 +146,12 @@
               "end": 21
             }
           ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s7",
+              "quote": "Fixed term months: 12"
+            }
+          ],
           "explanation": "Offline sample-label extraction; review against the source.",
           "invalid": false,
           "decision": "accepted",
@@ -132,6 +168,12 @@
               "location": "Line 9",
               "start": 0,
               "end": 17
+            }
+          ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s9",
+              "quote": "Rent amount: 8500"
             }
           ],
           "explanation": "Offline sample-label extraction; review against the source.",
@@ -152,6 +194,12 @@
               "end": 23
             }
           ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s10",
+              "quote": "Rent frequency: monthly"
+            }
+          ],
           "explanation": "Offline sample-label extraction; review against the source.",
           "invalid": false,
           "decision": "accepted",
@@ -168,6 +216,12 @@
               "location": "Line 8",
               "start": 0,
               "end": 13
+            }
+          ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s8",
+              "quote": "Currency: QAR"
             }
           ],
           "explanation": "Offline sample-label extraction; review against the source.",
@@ -188,6 +242,12 @@
               "end": 18
             }
           ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s11",
+              "quote": "Monthly rent: 8500"
+            }
+          ],
           "explanation": "Offline sample-label extraction; review against the source.",
           "invalid": false,
           "decision": "accepted",
@@ -204,6 +264,12 @@
               "location": "Line 12",
               "start": 0,
               "end": 19
+            }
+          ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s12",
+              "quote": "Annual rent: 102000"
             }
           ],
           "explanation": "Offline sample-label extraction; review against the source.",
@@ -224,6 +290,12 @@
               "end": 22
             }
           ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s13",
+              "quote": "Security deposit: 8500"
+            }
+          ],
           "explanation": "Offline sample-label extraction; review against the source.",
           "invalid": false,
           "decision": "accepted",
@@ -240,6 +312,12 @@
               "location": "Line 14",
               "start": 0,
               "end": 55
+            }
+          ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s14",
+              "quote": "Escalation: Rent increases by 3% at each annual renewal"
             }
           ],
           "explanation": "Offline sample-label extraction; review against the source.",
@@ -260,6 +338,12 @@
               "end": 74
             }
           ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s15",
+              "quote": "Renewal: Tenant may request a 12-month renewal with 60 days written notice"
+            }
+          ],
           "explanation": "Offline sample-label extraction; review against the source.",
           "invalid": false,
           "decision": "accepted",
@@ -276,6 +360,12 @@
               "location": "Line 16",
               "start": 0,
               "end": 87
+            }
+          ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s16",
+              "quote": "Termination: Either party must provide 60 days written notice subject to the fixed term"
             }
           ],
           "explanation": "Offline sample-label extraction; review against the source.",
@@ -296,6 +386,12 @@
               "end": 59
             }
           ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s17",
+              "quote": "Landlord signature: [signed] Sample Landlord Representative"
+            }
+          ],
           "explanation": "Offline sample-label extraction; review against the source.",
           "invalid": false,
           "decision": "accepted",
@@ -314,6 +410,12 @@
               "end": 44
             }
           ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s18",
+              "quote": "Tenant signature: [signed] Sample Tenant One"
+            }
+          ],
           "explanation": "Offline sample-label extraction; review against the source.",
           "invalid": false,
           "decision": "accepted",
@@ -330,6 +432,12 @@
               "location": "Line 14",
               "start": 0,
               "end": 55
+            }
+          ],
+          "proposed_evidence": [
+            {
+              "segment_id": "s14",
+              "quote": "Escalation: Rent increases by 3% at each annual renewal"
             }
           ],
           "explanation": "Demo recognizes a percentage or CPI; live mode supports richer mechanisms.",
@@ -592,6 +700,7 @@
       },
       "unit_id": "MC-B-1204",
       "model_calls": [],
+      "citation_corrections": [],
       "trace": [
         {
           "step": "read",
@@ -603,7 +712,7 @@
         },
         {
           "step": "verify",
-          "detail": "Check schema, exact quote membership and locations"
+          "detail": "Check schema, exact quote membership and locations; 0 uniquely located exact quotes corrected"
         },
         {
           "step": "repair",
@@ -618,9 +727,9 @@
           "detail": "No occupancy write until explicit approval"
         }
       ],
-      "id": "98691588ef51468b83691115cd59ae4d",
+      "id": "4c201665337d4717a1a9c7439e04bbef",
       "filename": "lease_valid.txt",
-      "stored_file": "98691588ef51468b83691115cd59ae4d.txt",
+      "stored_file": "4c201665337d4717a1a9c7439e04bbef.txt",
       "sha256": "7f2902fe1c1fde3e4d47c0fd219ca28dcfb82a477379d07911bcde82939da42b",
       "segments": [
         {
@@ -721,9 +830,9 @@
       ],
       "status": "active",
       "revision": 22,
-      "created_at": "2026-10-05T08:06:20.116975+00:00",
+      "created_at": "2026-10-05T11:12:38.044754+00:00",
       "provider": "demo (deterministic stub — not live AI)",
-      "activated_at": "2026-10-05T08:06:26.421354+00:00"
+      "activated_at": "2026-10-05T11:12:45.357728+00:00"
     }
   ],
   "issues": [
@@ -734,45 +843,167 @@
           "image_indexes": [
             0
           ],
-          "equipment": "Sink and drain pipe",
-          "condition": "damaged",
-          "visible_damage": "Synthetic fixture depicts water below a sink. Inspect the drain connection; the cause is not established.",
-          "explanation": "Scripted result for the exact synthetic sample image hash.",
+          "equipment": "Wall-mounted AC unit",
+          "condition": "worn",
+          "visible_damage": "A wall-mounted air-conditioning unit with visible surface marks and discoloration. Check and clean the housing; appearance does not establish age or operational performance.",
+          "explanation": "Offline reference assessment for this exact public photograph; not live vision inference.",
           "image_ids": [
-            "5beaf92ccb65490a9bff533bda903706"
+            "1f701229061249d99784d4d0871e4b26"
           ]
         },
         {
           "image_indexes": [
             1
           ],
+          "equipment": "Heat-exchanger coil and metal housing",
+          "condition": "damaged",
+          "visible_damage": "Visible bent fins and reddish-brown corrosion on the housing. A technician should inspect the affected area; operation and cause are not established.",
+          "explanation": "Offline reference assessment for this exact public photograph; not live vision inference.",
+          "image_ids": [
+            "97d6be2894f441888ff0965ac59e5ff5"
+          ]
+        },
+        {
+          "image_indexes": [
+            2
+          ],
+          "equipment": "Storage water heater",
+          "condition": "unknown",
+          "visible_damage": "Visible storage water-heater tank with attached fittings and straps. No operational fault or age can be established from this photograph.",
+          "explanation": "Offline reference assessment for this exact public photograph; not live vision inference.",
+          "image_ids": [
+            "bbdf549281e2435ca5cb0c2d74699d3d"
+          ]
+        },
+        {
+          "image_indexes": [
+            3
+          ],
+          "equipment": "Kitchen faucet and sink",
+          "condition": "unknown",
+          "visible_damage": "Visible running water at the faucet and surface marks. A flowing tap is not evidence of a plumbing leak; inspect in person if a fault is reported.",
+          "explanation": "Offline reference assessment for this exact public photograph; not live vision inference.",
+          "image_ids": [
+            "c28e566d70754070bea0087cb5698008"
+          ]
+        }
+      ],
+      "work_order": {
+        "title": "Inspect reported fixture condition",
+        "description": "A wall-mounted air-conditioning unit with visible surface marks and discoloration. Check and clean the housing; appearance does not establish age or operational performance.\nVisible bent fins and reddish-brown corrosion on the housing. A technician should inspect the affected area; operation and cause are not established.\nVisible storage water-heater tank with attached fittings and straps. No operational fault or age can be established from this photograph.\nVisible running water at the faucet and surface marks. A flowing tap is not evidence of a plumbing leak; inspect in person if a fault is reported.\nReporter states: Inspect four separate public equipment photographs; these are not photos of this unit.",
+        "priority": "unknown",
+        "decision": "pending"
+      },
+      "limitations": [
+        "Offline mode does not reason over arbitrary images.",
+        "Appearance does not establish age, cause, repair cost or operational safety.",
+        "Reporter text is unverified and remains separate from visual evidence."
+      ],
+      "trace": [
+        {
+          "step": "inspect",
+          "detail": "demo (deterministic stub — not live AI)"
+        },
+        {
+          "step": "verify",
+          "detail": "Validate image references and typed condition labels"
+        },
+        {
+          "step": "draft",
+          "detail": "No vendor dispatch or financial commitment"
+        },
+        {
+          "step": "await_review",
+          "detail": "Owner can correct, accept or reject draft"
+        }
+      ],
+      "id": "080b4fa8584042269f65c416915c6ade",
+      "unit_id": "MC-B-1204",
+      "report": "Inspect four separate public equipment photographs; these are not photos of this unit.",
+      "photos": [
+        {
+          "id": "1f701229061249d99784d4d0871e4b26",
+          "filename": "photo_wall_ac.jpg",
+          "sha256": "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706",
+          "mime": "image/jpeg",
+          "stored_file": "1f701229061249d99784d4d0871e4b26.jpeg",
+          "quality_warnings": []
+        },
+        {
+          "id": "97d6be2894f441888ff0965ac59e5ff5",
+          "filename": "photo_corrosion.jpg",
+          "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+          "mime": "image/jpeg",
+          "stored_file": "97d6be2894f441888ff0965ac59e5ff5.jpeg",
+          "quality_warnings": []
+        },
+        {
+          "id": "bbdf549281e2435ca5cb0c2d74699d3d",
+          "filename": "photo_water_heater.jpg",
+          "sha256": "0a64c8de0b7f3b2979ddd2c006d0b60ffefde932fc8d6eb7a9fdd291abacd885",
+          "mime": "image/jpeg",
+          "stored_file": "bbdf549281e2435ca5cb0c2d74699d3d.jpeg",
+          "quality_warnings": []
+        },
+        {
+          "id": "c28e566d70754070bea0087cb5698008",
+          "filename": "photo_faucet.jpg",
+          "sha256": "6a083b20d04edc03d70f676a47f281fd3c57ff657901a9c1d6891c5c579d6326",
+          "mime": "image/jpeg",
+          "stored_file": "c28e566d70754070bea0087cb5698008.jpeg",
+          "quality_warnings": []
+        }
+      ],
+      "created_at": "2026-10-05T11:12:46.749358+00:00",
+      "revision": 1,
+      "provider": "demo (deterministic stub — not live AI)"
+    },
+    {
+      "model_calls": [],
+      "observations": [
+        {
+          "image_indexes": [
+            0
+          ],
           "equipment": "Wall-mounted AC unit",
+          "condition": "worn",
+          "visible_damage": "A wall-mounted air-conditioning unit with visible surface marks and discoloration. Check and clean the housing; appearance does not establish age or operational performance.",
+          "explanation": "Offline reference assessment for this exact public photograph; not live vision inference.",
+          "image_ids": [
+            "a7228a700eac4756a4067c1e1ffc85c1"
+          ]
+        },
+        {
+          "image_indexes": [
+            1
+          ],
+          "equipment": "Heat-exchanger coil and metal housing",
           "condition": "unknown",
           "visible_damage": "Inspect the housing; visible mark is uncertain",
-          "explanation": "Owner correction: Owner overrides the scripted condition assessment",
+          "explanation": "Owner correction: Owner requests an inspection to resolve visual uncertainty",
           "image_ids": [
-            "f0d9e934dbdc4d53a370770720dc19b2"
+            "59e2d645dbc54280842c1ad94decd580"
           ],
           "original": {
             "image_indexes": [
               1
             ],
-            "equipment": "Wall-mounted AC unit",
-            "condition": "worn",
-            "visible_damage": "Synthetic fixture depicts discoloration and a mark on the AC housing. Inspect and clean; operation cannot be assessed from appearance.",
-            "explanation": "Scripted result for the exact synthetic sample image hash.",
+            "equipment": "Heat-exchanger coil and metal housing",
+            "condition": "damaged",
+            "visible_damage": "Visible bent fins and reddish-brown corrosion on the housing. A technician should inspect the affected area; operation and cause are not established.",
+            "explanation": "Offline reference assessment for this exact public photograph; not live vision inference.",
             "image_ids": [
-              "f0d9e934dbdc4d53a370770720dc19b2"
+              "59e2d645dbc54280842c1ad94decd580"
             ]
           },
           "decision": "accepted",
           "origin": "human",
-          "review_reason": "Owner overrides the scripted condition assessment"
+          "review_reason": "Owner requests an inspection to resolve visual uncertainty"
         }
       ],
       "work_order": {
-        "title": "Inspect sink and AC fixtures",
-        "description": "Sink and drain pipe (damaged): Synthetic fixture depicts water below a sink. Inspect the drain connection; the cause is not established.\nWall-mounted AC unit (unknown): Inspect the housing; visible mark is uncertain\nReporter states (unverified): Synthetic demonstration: inspect the sink and AC fixture.\nOwner review: Owner overrides the scripted condition assessment",
+        "title": "Inspect wall AC and corroded coil",
+        "description": "Wall-mounted AC unit (worn): A wall-mounted air-conditioning unit with visible surface marks and discoloration. Check and clean the housing; appearance does not establish age or operational performance.\nHeat-exchanger coil and metal housing (unknown): Inspect the housing; visible mark is uncertain\nReporter states (unverified): Public-photo evaluation: inspect the visible air conditioning equipment and coil.\nOwner review: Owner requests an inspection to resolve visual uncertainty",
         "priority": "unknown",
         "decision": "accepted",
         "review_reason": "Checked both fixture images and corrected the scope"
@@ -800,28 +1031,28 @@
           "detail": "Owner can correct, accept or reject draft"
         }
       ],
-      "id": "8b4edbd037f047f98e4a6e871bc12cee",
+      "id": "96c3a64216d141c3ba273e3afd00df43",
       "unit_id": "MC-B-1204",
-      "report": "Synthetic demonstration: inspect the sink and AC fixture.",
+      "report": "Public-photo evaluation: inspect the visible air conditioning equipment and coil.",
       "photos": [
         {
-          "id": "5beaf92ccb65490a9bff533bda903706",
-          "filename": "sample_leak.png",
-          "sha256": "bd50e1508a305a1e4d05dd14faa659349a517cbd57b6f88e264a88dba6c38a80",
-          "mime": "image/png",
-          "stored_file": "5beaf92ccb65490a9bff533bda903706.png",
+          "id": "a7228a700eac4756a4067c1e1ffc85c1",
+          "filename": "photo_wall_ac.jpg",
+          "sha256": "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706",
+          "mime": "image/jpeg",
+          "stored_file": "a7228a700eac4756a4067c1e1ffc85c1.jpeg",
           "quality_warnings": []
         },
         {
-          "id": "f0d9e934dbdc4d53a370770720dc19b2",
-          "filename": "sample_ac.png",
-          "sha256": "f4de4637f809d05e9b3e1e79ee9c7d26720ae024d12260669cd8539fdeb72681",
-          "mime": "image/png",
-          "stored_file": "f0d9e934dbdc4d53a370770720dc19b2.png",
+          "id": "59e2d645dbc54280842c1ad94decd580",
+          "filename": "photo_corrosion.jpg",
+          "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+          "mime": "image/jpeg",
+          "stored_file": "59e2d645dbc54280842c1ad94decd580.jpeg",
           "quality_warnings": []
         }
       ],
-      "created_at": "2026-10-05T08:06:20.468717+00:00",
+      "created_at": "2026-10-05T11:12:38.719468+00:00",
       "revision": 3,
       "provider": "demo (deterministic stub — not live AI)"
     }
