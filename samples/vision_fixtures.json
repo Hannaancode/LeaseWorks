@@ -1,0 +1,12 @@
+{
+  "bd50e1508a305a1e4d05dd14faa659349a517cbd57b6f88e264a88dba6c38a80": {
+    "equipment": "Sink and drain pipe",
+    "condition": "damaged",
+    "visible_damage": "Synthetic fixture depicts water below a sink. Inspect the drain connection; the cause is not established."
+  },
+  "f4de4637f809d05e9b3e1e79ee9c7d26720ae024d12260669cd8539fdeb72681": {
+    "equipment": "Wall-mounted AC unit",
+    "condition": "worn",
+    "visible_damage": "Synthetic fixture depicts discoloration and a mark on the AC housing. Inspect and clean; operation cannot be assessed from appearance."
+  }
+}
