@@ -1,6 +1,6 @@
 # LeaseWorks
 
-A small full-stack service that turns leases and property photos into records an owner can check and approve. Built for the TrueLinks.AI SDE–Platform & Products exercise by Abdul Hannaan.
+I built LeaseWorks for the TrueLinks.AI SDE–Platform & Products exercise. It turns lease documents and property photographs into source-linked records an owner can inspect, correct and approve.
 
 **The key product decision:** put the evidence, the owner's rules and the approval in the same unit workspace. A plausible AI answer should never quietly become a financial or occupancy decision.
 
@@ -41,20 +41,20 @@ The container runs as a non-root user and binds the published port to localhost.
 
 1. Open Apartment 1204 and select **Valid lease**. Check the 18 extracted fields and seven passing rules. Uploading does not change occupancy.
 2. Open **source citations** beside the rent or dates. Each quote has a source location, segment ID and character range. Download the original to inspect signatures.
-3. Select **Use two test images**. The report shows the equipment, condition, limitations and work-order draft beside the lease.
+3. Select **Use real sample photos**. The report shows the equipment, condition, limitations and work-order draft beside the lease.
 4. Use **Correct assessment** to change a photo interpretation. The original is retained and the work order returns to pending review. Edit or accept/reject the work order with a reason.
 5. Accept each lease field and review both signature flags. Select **Approve lease and mark unit occupied**. Availability is checked again inside the transaction.
 6. Inspect the audit history and export the unit record. Then try **With problems**, **Missing fields** or **Occupied unit** to see failures and unknowns. A previously activated 1204 also fails availability for a new lease.
 
 To repeat with a fresh database, stop the server and rename `var/` to a backup name before restarting. Preserve that folder if its records matter.
 
-The two sample images are **synthetic drawings**, clearly labelled as test fixtures. They are not inspection photographs. No sample lease or photo was present in the three supplied attachments, so I added fictional lease samples and these deterministic image fixtures.
+I use four real, attributed public equipment photographs for the sample image flow. They depict separate equipment, not the supplied units. Offline mode shows fixed reference assessments for their exact file hashes; live mode sends their actual bytes to the vision model. The sample leases contain fictional identities. Public lease-template evaluation is documented separately, so I do not present invented contracts as executed tenant agreements.
 
 ## Demo and live AI
 
 | Mode | Lease behavior | Photo behavior |
 |---|---|---|
-| `demo` — default | Recognizes labelled sample clauses and detects conflicting values | Scripted observations only for the exact SHA-256 hashes of the two sample images; all other images are unknown |
+| `demo` — default | Recognizes labelled sample clauses and detects conflicting values | Fixed reference assessments for the exact hashes of the four real sample photographs; all other images are unknown |
 | `openai` | Interprets document text using strict structured output | Sends actual uploaded image bytes to a vision-capable model and requests image-cited observations |
 
 The offline adapter is a stub, not an LLM. The interface says so. It never identifies equipment from a filename. This uses the brief's explicit permission to stub text and vision without an API key.
@@ -72,15 +72,15 @@ Use a model your account can access that supports images and strict JSON-schema 
 
 The live adapter requires outbound HTTPS to `api.openai.com` and sends lease text and uploaded photos to that provider. `store=false` is set, but it is not a promise of zero retention; check your account's applicable data policy before using real tenant data. No key is committed or returned by the API. Requests have a 60-second timeout. There is no silent fallback to demo mode if a live call fails.
 
-**Live validation:** real Responses API calls were exercised with eight prose lease cases and four photo scenarios, including two attributed inspection photographs. The final results and earlier failures are recorded in [docs/LIVE_VALIDATION.md](docs/LIVE_VALIDATION.md). This small integration set is not a held-out accuracy benchmark. [docs/EVALUATION.md](docs/EVALUATION.md) describes the broader evaluation needed before a pilot.
+**Live validation:** I exercised real Responses API calls with prose leases, public PDF forms, a fictional completion of an interactive tenancy form, bilingual Qatar scenarios and four attributed equipment photographs. Original integration results and earlier failures are recorded in [docs/LIVE_VALIDATION.md](docs/LIVE_VALIDATION.md); the public-form evaluation and fixes are in [docs/REALISTIC_VALIDATION.md](docs/REALISTIC_VALIDATION.md). This small integration set is not a held-out accuracy benchmark. [docs/EVALUATION.md](docs/EVALUATION.md) describes the broader evaluation needed before a pilot.
 
-Live mode adds **Prose lease** and **Use actual AC photos** to the sample menu. The photos depict separate equipment; they are illustrative samples, not inspections of the supplied units. Their authors and licences are listed in [samples/live/ATTRIBUTION.md](samples/live/ATTRIBUTION.md).
+Both modes offer **Use real sample photos** (AC and coil) and **Use all four photos** (also heater and faucet); live mode additionally offers **Prose lease**. The photos depict separate equipment; they are illustrative samples, not inspections of the supplied units. Their authors and licences are listed in [samples/live/ATTRIBUTION.md](samples/live/ATTRIBUTION.md).
 
 ## How the agents work
 
 The application runs two bounded agent workflows rather than allowing a model unrestricted write access.
 
-The lease agent reads source segments, asks the model for evidence-linked fields, runs a source/type verifier, and gives verification feedback back to the model for **at most one repair attempt**. It then runs deterministic policy tools, matches an exact unit ID and suspends for review. An unresolved invalid citation is flagged and cannot be accepted without a recorded human correction. A failed structured response creates no lease record. A source gate returns ambiguous numeric dates to unknown instead of accepting a guessed locale. Equivalent rent-frequency wording is normalized to the canonical vocabulary while retaining the original proposal. A conservative English source check also blocks choosing between different stated monthly rents and includes both citations. It can require review for legitimate stepped schedules; resolving precedence and broader language coverage remain future work.
+The lease agent reads source segments, asks the model for evidence-linked fields, runs a source/type verifier, and gives verification feedback back to the model for **at most one repair attempt**. It then runs deterministic policy tools, matches an exact unit ID and suspends for review. An unresolved invalid citation is flagged and cannot be accepted without a recorded human correction. A failed structured response creates no lease record. A source gate returns ambiguous numeric dates to unknown instead of accepting a guessed locale. Equivalent rent-frequency wording is normalized to the canonical vocabulary while retaining the original proposal. A conservative English source check also blocks choosing between different stated monthly rents and includes both citations. The verifier preserves an explicitly cited fixed term instead of a model-computed duration. An exact quote assigned to the wrong segment is relocated only if it occurs in precisely one source segment, retaining both proposed and resolved locations in the audit data. Different explicit monetary currencies make amount comparisons unknown until corrected; no exchange conversion is attempted. It can require review for legitimate stepped schedules; resolving precedence and broader language coverage remain future work.
 
 The issue agent inspects one to four images, verifies the returned image references and condition labels, proposes equipment observations and a work order, then suspends for the owner. The model never chooses a different unit: the report's unit comes from the selected register entry. Reporter claims are explicitly separate from visual observations. Uniform blank photos skip inference and request clearer evidence; their equipment and condition remain unknown. The workflow displays model version, request latency and token usage without exposing credentials.
 
@@ -134,11 +134,13 @@ Approval requires every field to have an accepted non-null valid value, every fl
 | Availability | Preserve pre-link status for historical R7 checks, then independently check live status at approval |
 | AI cost | No background inference, bounded repair and no automatic HTTP retries; easier to understand cost and failures |
 
-Uploads are bounded and image contents are decoded before assessment. Supported leases are UTF-8 TXT, text-based PDF and DOCX. DOCX tables retain table/row locations. A scanned PDF with no extractable text returns an OCR-required error. Upload HTML/script text is escaped in the UI. Browser cross-origin writes are blocked. These are prototype safeguards, not a production security certification.
+Uploads are bounded and image contents are decoded before assessment. Supported leases are UTF-8 TXT, text-based PDF and DOCX. PDF citations use whitespace-normalized page text; populated interactive PDF form fields retain page-and-field locations. DOCX tables retain table/row locations. A scanned PDF with no extractable text returns an OCR-required error. Upload HTML/script text is escaped in the UI. Browser cross-origin writes are blocked. These are prototype safeguards, not a production security certification.
 
 The audit labels actions but there is no authenticated reviewer identity yet. **Run on localhost with sample data.** Authentication, authorization and organisation isolation are prerequisites for external use.
 
 ## Tests
+
+**Final evaluation: 54/54 live-provider scenarios and 160 automated tests passed.** The case-by-case purpose, expected outcome, observed outcome and receipts are recorded in [test_cases.txt](test_cases.txt). The scenarios include original flows, public PDF formats, bilingual fictional leases, money/date/unit boundaries, DOCX and real photographs. These are scenario executions, not 54 independent real contracts or a held-out accuracy benchmark.
 
 ```bash
 python -m pip install -r requirements-dev.txt
@@ -149,10 +151,20 @@ python tests/browser_smoke.py
 python tests/browser_adversarial.py
 ```
 
+To download the public PDF test forms and create the clearly labelled fictional completion without any model calls:
+
+```bash
+python tests/realistic_validation.py --prepare-only
+```
+
+They are saved under `test-results/public-leases/`. The fictional narrative files are in `samples/realistic/`.
+
 Opt-in paid validation, after privately setting `OPENAI_API_KEY`:
 
 ```bash
-LIVE_RESULTS_DIR=results/local python tests/live_validation.py
+LIVE_RESULTS_DIR=test-results/live python tests/live_validation.py
+python tests/realistic_validation.py
+python tests/expanded_live_validation.py
 BROWSER_MODEL_PROVIDER=openai SCREENSHOT_DIR=test-results/live python tests/browser_smoke.py
 python tests/browser_adversarial.py
 ```
@@ -161,11 +173,11 @@ The live scenario runner limits calls and fixture size; it does not enforce an a
 
 The browser test starts its own fresh local server and isolated storage. `CHROMIUM_EXECUTABLE` can point to an existing compatible Chromium. It saves screenshots under ignored `test-results/` unless `SCREENSHOT_DIR` is set.
 
-The test suite covers rule failures, missing values, fabricated citations and bounded repair, contradictory rents, invalid overrides, occupied units, concurrent approval, revisions, preservation of originals, multiple images, work-order decisions, condition corrections, invalid uploads, prompt-injection boundaries and provider errors. The browser test covers the complete owner flow and mobile overflow. GitHub Actions repeats lint, API tests and the browser walkthrough. See [docs/VALIDATION.md](docs/VALIDATION.md) for the actual run results and [docs/EXTENDED_VALIDATION.md](docs/EXTENDED_VALIDATION.md) for the broader 150-test pass, failure fixes and browser recovery checks. [docs/MANUAL_TESTING.md](docs/MANUAL_TESTING.md) provides Windows startup commands and an expected-results checklist.
+The test suite covers rule failures, missing values, fabricated citations and bounded repair, contradictory rents, invalid overrides, occupied units, concurrent approval, revisions, preservation of originals, multiple images, work-order decisions, condition corrections, invalid uploads, prompt-injection boundaries and provider errors. The browser test covers the complete owner flow and mobile overflow. GitHub Actions repeats lint, API tests and the browser walkthrough. See [docs/VALIDATION.md](docs/VALIDATION.md) for the actual run results and [docs/EXTENDED_VALIDATION.md](docs/EXTENDED_VALIDATION.md) for the earlier 150-test pass, failure fixes and browser recovery checks. [docs/MANUAL_TESTING.md](docs/MANUAL_TESTING.md) provides Windows startup commands and an expected-results checklist.
 
 ## What I left out and what breaks first
 
-This is one ownership entity with local sample-data access. I left out login/roles, tenant identity, OCR and visual PDF signature inspection, Arabic/RTL, unit alias resolution, notifications, vendor dispatch, scheduling, accounting, legal interpretation, move-out and renewal workflows. Work-order approval records a decision; it does not contact a contractor.
+This is one ownership entity with local sample-data access. I left out login/roles, tenant identity, OCR and visual PDF signature inspection, a translated Arabic interface and complete RTL workflows, unit alias resolution, notifications, vendor dispatch, scheduling, accounting, legal interpretation, move-out and renewal workflows. Work-order approval records a decision; it does not contact a contractor.
 
 At scale, synchronous model calls and parsing consume server threads, and SQLite becomes the first write bottleneck. The local files are also unsuitable for multiple app instances. I would introduce a job queue with explicit job states, idempotent ingestion, PostgreSQL transactions and tenant-scoped object storage before adding more agents. File and database writes are not a distributed transaction: a database failure can leave an orphan upload, so object cleanup is also needed.
 
@@ -197,7 +209,7 @@ My proposed first 30 days and an existing project example are in [docs/FIRST_30_
 
 ## AI assistance and references
 
-AI coding assistance was used for this exercise, as the brief permits. The design boundaries, test cases, failure behavior and product choices are documented so the implementation can be inspected and reproduced.
+I used AI coding assistance for this exercise, as the brief permits. The design boundaries, test cases, failure behavior and product choices are documented so the implementation can be inspected and reproduced.
 
 Provider implementation references: [Responses API](https://developers.openai.com/api/reference/responses/overview), [structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=responses) and [image inputs](https://developers.openai.com/api/docs/guides/images-vision). Product planning is informed by the exercise and [TrueLinks' official product overview](https://truelinks.ai/en), reviewed on 5 October 2026. I have not seen the company's internal architecture or roadmap.
 
