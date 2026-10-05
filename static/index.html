@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LeaseWorks — Owner review</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+<aside class="sidebar">
+ <a class="brand" href="/">LW<span>LeaseWorks<small>PROPERTY OWNER CONSOLE</small></span></a>
+ <div class="side-label">MARINA CREST HOLDINGS</div>
+ <nav id="units" aria-label="Units"></nav>
+ <div class="side-footer">One unit. One record.<br>Lease evidence and property issues.</div>
+</aside>
+<main>
+ <header><div><p class="eyebrow">PORTFOLIO / UNIT WORKSPACE</p><h1 id="unit-title">Loading units…</h1><p id="unit-meta" class="muted"></p></div><div><span id="status" class="badge"></span><button id="export" class="secondary">Export record</button></div></header>
+ <div id="provider" class="notice">Checking model configuration…</div>
+ <div id="message" role="status" aria-live="polite" hidden></div>
+ <section class="stats" id="stats"></section>
+ <div class="workspace">
+  <section class="panel lease-panel">
+   <div class="panel-head"><div><p class="eyebrow">01 / LEASE RECORD</p><h2>Read. Verify. Review.</h2></div></div>
+   <p class="muted">Upload a lease and check each field against its source. Occupancy changes only after your approval.</p>
+   <form id="lease-upload"><label class="upload-box">Lease document<input id="lease-file" type="file" accept=".txt,.pdf,.docx" required><span>TXT, text PDF or DOCX · up to 8 MiB</span></label><button type="submit">Extract lease</button></form>
+   <div class="sample-row"><span>Try a sample</span><button data-lease="lease_valid.txt" class="text-btn">Valid lease</button><button data-lease="lease_problematic.txt" class="text-btn">With problems</button><button data-lease="lease_missing.txt" class="text-btn">Missing fields</button><button data-lease="lease_occupied.txt" class="text-btn">Occupied unit</button><button id="prose-lease" data-lease="prose_lease.txt" class="text-btn" hidden>Prose lease</button></div>
+   <div id="lease"></div>
+  </section>
+  <section class="panel issues-panel">
+   <div class="panel-head"><div><p class="eyebrow">02 / PROPERTY ISSUES</p><h2>Photos to a draft work order.</h2></div></div>
+   <p class="muted">Reports stay attached to this unit and its lease. Review the evidence before approving work.</p>
+   <form id="issue-upload"><label class="upload-box">Property photos<input id="photos" type="file" accept="image/png,image/jpeg,image/webp" multiple required><span>1–4 images · up to 6 MiB each</span></label><label>Reporter’s description<textarea id="report" maxlength="4000" placeholder="What did you notice? Add location or access details."></textarea></label><button type="submit">Assess and draft</button></form>
+   <div class="sample-row"><span>Sample images</span><button id="real-photo-issue" class="text-btn">Use real sample photos</button><button id="all-photo-issue" class="text-btn">Use all four photos</button></div><p id="photo-credit" class="muted">Public test photographs from Wikimedia Commons · <a href="/samples/photo_attribution.md">Authors and licences</a> · These are not photos of this unit</p>
+   <div id="issues"></div>
+  </section>
+ </div>
+ <section class="panel" id="unmatched-section" hidden><h2>Unmatched lease drafts</h2><p class="muted">These drafts need a valid unit ID. Open a draft and correct the unit field.</p><div id="unmatched"></div></section>
+ <footer>Sample-data prototype · Every change is recorded · Approved work orders are not automatically dispatched</footer>
+</main>
+<dialog id="review-dialog"><form id="review-form"><p class="eyebrow">OWNER REVIEW</p><h2 id="review-title"></h2><div id="review-value"></div><label>Reason for this decision<textarea id="review-reason" required minlength="3" placeholder="Explain what you checked or why you changed it."></textarea></label><div class="dialog-actions"><button type="button" id="cancel-review" class="secondary">Cancel</button><button type="submit" id="confirm-review">Save decision</button></div></form></dialog>
+<dialog id="evidence-dialog"><div class="panel-head"><h2>Source evidence</h2><button id="close-evidence" class="secondary">Close</button></div><div id="evidence-body"></div></dialog>
+</body></html>

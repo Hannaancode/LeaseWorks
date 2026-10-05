@@ -1,0 +1,153 @@
+{
+  "model": "gpt-4.1-mini",
+  "cases": [
+    {
+      "case": "prose_valid",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "prose_failures",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "prose_missing",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "prose_conflict",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "prose_occupied",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "prose_injection",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "prose_ambiguous_dates",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "prose_long_term",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "real_wall_ac",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "real_rusty_coil",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "real_multi_photo",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "uninformative_image",
+      "http_status": 201,
+      "passed": true,
+      "mismatches": []
+    }
+  ],
+  "passed": 12,
+  "total": 12,
+  "calls": 11,
+  "usage": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 15.585,
+      "input_tokens": 1302,
+      "output_tokens": 998
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 12.722,
+      "input_tokens": 1298,
+      "output_tokens": 1004
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 13.188,
+      "input_tokens": 1179,
+      "output_tokens": 903
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 20.929,
+      "input_tokens": 1345,
+      "output_tokens": 975
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 12.363,
+      "input_tokens": 1302,
+      "output_tokens": 892
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 14.707,
+      "input_tokens": 1361,
+      "output_tokens": 958
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 13.79,
+      "input_tokens": 1303,
+      "output_tokens": 1054
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 11.576,
+      "input_tokens": 1303,
+      "output_tokens": 984
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 9.324,
+      "input_tokens": 2744,
+      "output_tokens": 145
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 9.532,
+      "input_tokens": 2745,
+      "output_tokens": 170
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 11.638,
+      "input_tokens": 5099,
+      "output_tokens": 217
+    }
+  ],
+  "input_tokens": 20981,
+  "output_tokens": 8300,
+  "estimated_usd_at_uncached_rates": "0.0216724",
+  "billing_note": "Usage-based estimate, not an account invoice; excludes earlier connectivity checks.",
+  "scope": "Small integration evaluation with synthetic leases and two public photographs; not a held-out accuracy benchmark."
+}

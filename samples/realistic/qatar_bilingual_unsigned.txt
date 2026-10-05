@@ -1,0 +1,15 @@
+This document is a fictional test contract, not an executed tenancy agreement. All names and addresses below are invented.
+عقد إيجار سكني تجريبي — الدوحة
+المؤجر: Marina Crest Holdings LLC
+المستأجر: Example Tenant
+الوحدة: MC-B-1204
+تاريخ بداية الإيجار: 1 November 2026
+تاريخ نهاية الإيجار: 31 October 2027
+مدة العقد اثنا عشر شهراً (12 months).
+الإيجار الشهري 8500 ريال قطري (QAR 8500 per month).
+الإيجار السنوي 102000 ريال قطري (QAR 102000 annual rent).
+مبلغ التأمين 8500 ريال قطري (QAR 8500 security deposit).
+زيادة الإيجار عند التجديد بنسبة 3%.
+التجديد باتفاق الطرفين خطياً قبل انتهاء العقد بستين يوماً.
+الإنهاء بإشعار خطي قبل ستين يوماً.
+خانات توقيع المؤجر والمستأجر فارغة. This fictional contract is unsigned.

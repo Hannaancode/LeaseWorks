@@ -1,0 +1,88 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 11.444,
+      "input_tokens": 5099,
+      "output_tokens": 220
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "Wall-mounted air conditioning unit",
+      "condition": "appears_new",
+      "visible_damage": "",
+      "explanation": "The air conditioning unit appears clean and without visible damage in the provided image.",
+      "image_ids": [
+        "d6a1d2ae4ab64343bbcc22db354020eb"
+      ]
+    },
+    {
+      "image_indexes": [
+        1
+      ],
+      "equipment": "Air conditioning condenser coil or evaporator coil",
+      "condition": "damaged",
+      "visible_damage": "Significant corrosion and rust on metal surfaces and fins appear bent or broken.",
+      "explanation": "The image shows severe corrosion and physical damage to the metal fins of the coil, indicating possible performance degradation or failure risk. Exact equipment type inferred based on typical air conditioning component appearance but not certain.",
+      "image_ids": [
+        "aaad540b8bb547e49a0802edb4ab97ec"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Inspection of air conditioning units and components",
+    "description": "Routine inspection of two air conditioning equipment pieces: the indoor unit which visually appears intact, and the coil unit showing significant rust and damage. Recommend qualified technician evaluation and possible repairs or replacement for corroded coil.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Second image close-up limits broader context of the affected equipment.",
+    "Exact equipment type in second image cannot be definitively identified from the photo alone."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "555f99f4807f478292be2f8478bdb96d",
+  "unit_id": "MC-B-1204",
+  "report": "Inspect the two photographed pieces of equipment.",
+  "photos": [
+    {
+      "id": "d6a1d2ae4ab64343bbcc22db354020eb",
+      "filename": "wall_ac.jpg",
+      "sha256": "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706",
+      "mime": "image/jpeg",
+      "stored_file": "d6a1d2ae4ab64343bbcc22db354020eb.jpeg",
+      "quality_warnings": []
+    },
+    {
+      "id": "aaad540b8bb547e49a0802edb4ab97ec",
+      "filename": "rusty_ac.jpg",
+      "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+      "mime": "image/jpeg",
+      "stored_file": "aaad540b8bb547e49a0802edb4ab97ec.jpeg",
+      "quality_warnings": []
+    }
+  ],
+  "created_at": "2026-10-05T07:48:58.932837+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}

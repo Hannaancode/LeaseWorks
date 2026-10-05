@@ -1,0 +1,89 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 11.63,
+      "input_tokens": 5099,
+      "output_tokens": 278
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "Wall-mounted air conditioning unit",
+      "condition": "appears_new",
+      "visible_damage": "No visible damage",
+      "explanation": "The air conditioning unit in image 0 appears clean and intact with no visible damage, just some minor wear on the wall surrounding the unit.",
+      "image_ids": [
+        "a60610851904483eb04a6a1740b25c8e"
+      ]
+    },
+    {
+      "image_indexes": [
+        1
+      ],
+      "equipment": "Unidentified metal equipment with coil or finned surface",
+      "condition": "damaged",
+      "visible_damage": "Significant corrosion and rust on metal surfaces, with breakage of fin pieces",
+      "explanation": "The equipment in image 1 shows severe rust and corrosion damage on the metal parts and broken fin pieces, suggesting structural degradation. The exact type of equipment is unclear. The photo likely shows an internal component, possibly part of a cooling or heating system.",
+      "image_ids": [
+        "0f822361f4f54dd7b19f9a7e58f0bbac"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Inspection Requested for Indoor Air Conditioning Unit and Corroded Equipment",
+    "description": "Inspection requested for two pieces of equipment: the wall-mounted air conditioning unit (image 0) shows no visible damage, while the equipment in image 1 shows severe corrosion and broken fin pieces indicating damage. Recommend qualified technician inspection and necessary repairs or maintenance.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Equipment in image 1 is not definitively identified due to limited visible context.",
+    "No indication of functionality or internal condition beyond visible corrosion and damage.",
+    "Reporter claims unverified, assessment based solely on visible evidence."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "6b3306f1aa4544c48109371a0b33fbdf",
+  "unit_id": "MC-B-1204",
+  "report": "Inspect the two photographed pieces of equipment.",
+  "photos": [
+    {
+      "id": "a60610851904483eb04a6a1740b25c8e",
+      "filename": "wall_ac.jpg",
+      "sha256": "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706",
+      "mime": "image/jpeg",
+      "stored_file": "a60610851904483eb04a6a1740b25c8e.jpeg",
+      "quality_warnings": []
+    },
+    {
+      "id": "0f822361f4f54dd7b19f9a7e58f0bbac",
+      "filename": "rusty_ac.jpg",
+      "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+      "mime": "image/jpeg",
+      "stored_file": "0f822361f4f54dd7b19f9a7e58f0bbac.jpeg",
+      "quality_warnings": []
+    }
+  ],
+  "created_at": "2026-10-05T09:11:01.720797+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}

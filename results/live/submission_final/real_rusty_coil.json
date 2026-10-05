@@ -1,0 +1,68 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 9.141,
+      "input_tokens": 2745,
+      "output_tokens": 211
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "coil and metal housing",
+      "condition": "damaged",
+      "visible_damage": "The metal housing shows extensive rust and corrosion. The coil fins are bent, broken, and damaged with several pieces missing or hanging loose.",
+      "explanation": "This image clearly shows significant corrosion on the metal housing and physical damage to the coil fins. The extent of visible damage suggests impaired function and possible leakage or loss of efficiency. The image is close-up and focused on these parts, so the damage is evident. However, internal condition or operational status cannot be determined from the image alone.",
+      "image_ids": [
+        "0e12e38d5a074854bde6c100b62b2cbe"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Corroded and Damaged Coil and Metal Housing Inspection",
+    "description": "Inspection of the coil and metal housing reveals severe rust corrosion and bent, broken coil fins. Recommend evaluation and repair or replacement by a qualified technician to restore proper function and prevent further deterioration.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Image shows only a close-up portion; overall system condition not visible.",
+    "Internal damage or functional status cannot be assessed from the photo."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "5ef44097913b4e3e900d32e2d79490db",
+  "unit_id": "MC-B-1204",
+  "report": "Inspect the visible coil and metal housing.",
+  "photos": [
+    {
+      "id": "0e12e38d5a074854bde6c100b62b2cbe",
+      "filename": "rusty_ac.jpg",
+      "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+      "mime": "image/jpeg",
+      "stored_file": "0e12e38d5a074854bde6c100b62b2cbe.jpeg",
+      "quality_warnings": []
+    }
+  ],
+  "created_at": "2026-10-05T11:15:56.150099+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}

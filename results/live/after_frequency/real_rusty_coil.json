@@ -1,0 +1,67 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 8.617,
+      "input_tokens": 2745,
+      "output_tokens": 184
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "Metal housing and coil (likely HVAC coil)",
+      "condition": "damaged",
+      "visible_damage": "Severe corrosion and rust on the metal housing; coil fins are bent, damaged, and broken in multiple places.",
+      "explanation": "The metal housing shows significant rust and corrosion which could affect structural integrity and performance. The coil fins are visibly bent and broken, which may impact the equipment's efficiency. Photos only show external visible damage; internal condition unknown.",
+      "image_ids": [
+        "72b959714b8a4c25959ea17ef6910c8c"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Inspection and Repair of Corroded Coil and Metal Housing",
+    "description": "The visible coil and adjacent metal housing exhibit severe rust and physical damage. These conditions require inspection and likely repair or replacement by a qualified technician to ensure proper function and prevent further deterioration.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Image shows only a limited portion of the equipment; internal condition and functionality cannot be assessed from photo alone."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "d449bb4b07b840e9ba35fa31ccde2706",
+  "unit_id": "MC-B-1204",
+  "report": "Inspect the visible coil and metal housing.",
+  "photos": [
+    {
+      "id": "72b959714b8a4c25959ea17ef6910c8c",
+      "filename": "rusty_ac.jpg",
+      "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+      "mime": "image/jpeg",
+      "stored_file": "72b959714b8a4c25959ea17ef6910c8c.jpeg",
+      "quality_warnings": []
+    }
+  ],
+  "created_at": "2026-10-05T07:45:18.209353+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}

@@ -1,0 +1,15 @@
+SYNTHETIC TEST LEASE — NOT A LEGAL DOCUMENT
+Landlord: Marina Crest Holdings W.L.L.
+Tenant: Sample Tenant One
+Unit ID: MC-B-1204
+Commencement date: 2026-10-01
+Fixed term months: 12
+Currency: QAR
+Rent amount: 8500
+Rent frequency: monthly
+Monthly rent: 8500
+Escalation: Rent increases by 3% at each annual renewal
+Renewal: Tenant may request a 12-month renewal with 60 days written notice
+Termination: Either party must provide 60 days written notice subject to the fixed term
+Landlord signature: [signed] Sample Landlord Representative
+All names and signature markers above are fictional fixtures for testing

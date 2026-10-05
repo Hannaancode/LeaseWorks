@@ -1,0 +1,87 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 11.495,
+      "input_tokens": 5078,
+      "output_tokens": 256
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "Wall-mounted air conditioning unit (Toshiba)",
+      "condition": "appears_new",
+      "visible_damage": "No visible damage on the surface of the unit.",
+      "explanation": "The unit appears clean and intact, with no visible signs of wear or damage from the angle shown.",
+      "image_ids": [
+        "dd6435084bb44b9c83a416dcac3b4f3d"
+      ]
+    },
+    {
+      "image_indexes": [
+        1
+      ],
+      "equipment": "Condenser coil or evaporator coil of an air conditioning unit",
+      "condition": "damaged",
+      "visible_damage": "Significant rust visible on coil fins frame and surrounding metal panel; several coil fins are bent or broken off.",
+      "explanation": "The rust indicates corrosion damage, and the bent/broken fins could affect performance. Image is close-up and clearly shows damage.",
+      "image_ids": [
+        "286673ccc40e4e69ab6839f09abc6c17"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Air Conditioning Unit Inspection and Repair",
+    "description": "Inspect the wall-mounted indoor unit and the associated coil component for functionality and potential internal damage. The indoor unit appears intact but the coil displays serious rust and bent fins that may require cleaning, repair, or replacement by a qualified HVAC technician. Confirm system operation and address corrosion to prevent further damage.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Indoor unit condition assessed only visually from front exterior.",
+    "Coil image does not indicate exact location or full system context.",
+    "No operational testing or internal inspection visible."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "8c411332363b4488beb22768670050fb",
+  "unit_id": "MC-B-1204",
+  "report": "Inspect the two photographed pieces of equipment.",
+  "photos": [
+    {
+      "id": "dd6435084bb44b9c83a416dcac3b4f3d",
+      "filename": "wall_ac.jpg",
+      "sha256": "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706",
+      "mime": "image/jpeg",
+      "stored_file": "dd6435084bb44b9c83a416dcac3b4f3d.jpeg"
+    },
+    {
+      "id": "286673ccc40e4e69ab6839f09abc6c17",
+      "filename": "rusty_ac.jpg",
+      "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+      "mime": "image/jpeg",
+      "stored_file": "286673ccc40e4e69ab6839f09abc6c17.jpeg"
+    }
+  ],
+  "created_at": "2026-10-05T07:29:06.207142+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}
