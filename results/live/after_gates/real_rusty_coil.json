@@ -1,0 +1,68 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 8.89,
+      "input_tokens": 2745,
+      "output_tokens": 165
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "Coil and metal housing",
+      "condition": "damaged",
+      "visible_damage": "Coil fins are significantly bent and damaged; metal housing shows extensive rust and corrosion staining.",
+      "explanation": "The image shows severe physical damage to the coil fins and clear rusty discoloration on the metal housing. This indicates possible prolonged exposure to moisture and mechanical impact. Immediate evaluation by a qualified technician is needed to assess serviceability and potential leaks.",
+      "image_ids": [
+        "3b9ab0672eb14a589202ee2aca529cd3"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Damaged Coil Fins and Rusted Metal Housing",
+    "description": "The coil fins are bent and damaged with metal housing exhibiting severe rust and corrosion. Professional inspection and repair or replacement is recommended.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Single image limits full assessment of entire coil and housing condition",
+    "No information on operational status or internal damage"
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "6c96b3993a3d4faeb1cf7239ccafad3b",
+  "unit_id": "MC-B-1204",
+  "report": "Inspect the visible coil and metal housing.",
+  "photos": [
+    {
+      "id": "3b9ab0672eb14a589202ee2aca529cd3",
+      "filename": "rusty_ac.jpg",
+      "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+      "mime": "image/jpeg",
+      "stored_file": "3b9ab0672eb14a589202ee2aca529cd3.jpeg",
+      "quality_warnings": []
+    }
+  ],
+  "created_at": "2026-10-05T07:36:59.539278+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}
