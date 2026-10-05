@@ -2,7 +2,7 @@
 
 Executed on 5 October 2026 against the real OpenAI Responses API with `gpt-4.1-mini` (returned model version `gpt-4.1-mini-2025-04-14`). No API credential is included in this repository.
 
-**Final integration run: 12/12 scenarios passed.** Full proposals, citations, policy decisions, model usage and case summaries are under `results/live/final/`. Each lease stayed a draft and did not change occupancy during API evaluation.
+**Initial final integration run: 12/12 scenarios passed.** Full proposals, citations, policy decisions, model usage and case summaries are under `results/live/final/`. Each lease stayed a draft and did not change occupancy during API evaluation.
 
 | Scenario | Expected behavior | Result |
 |---|---|---|
@@ -40,12 +40,20 @@ The final run used 19,261 input tokens and 8,433 output tokens. Measured per-cal
 
 ## Browser and budget evidence
 
-The live Chromium walkthrough used the prose lease and both actual photographs, then checked source evidence, seven rules, a photo correction, work-order editing/approval, all 18 field approvals, two signature acknowledgements, occupancy, audit and JSON export. Desktop and 390 × 844 mobile checks passed without JavaScript errors or document-level horizontal overflow. Screenshots and the exported record are in `docs/screenshots/live/`.
+The refreshed live Chromium walkthrough used the prose lease, both actual AC/coil photographs and a separate four-photo issue, then checked source evidence, seven rules, a photo correction, work-order editing/approval, all 18 field approvals, two signature acknowledgements, occupancy, audit and JSON export. Desktop and 390 × 844 mobile checks passed without JavaScript errors or document-level horizontal overflow. Screenshots and the exported record are in `docs/screenshots/live/`.
 
-The four recorded scenario runs plus the recorded browser inference have a combined usage-based estimate of **$0.0949**, well below the supplied $2 test budget. This uses $0.40/million input and $1.60/million output tokens without cached discounts. It is not an invoice and excludes a few small startup/connectivity calls. The scenario runner bounds calls and fixture sizes, but is not an account-wide spend limiter.
+The original four recorded scenario runs plus their original browser inference had a combined usage-based estimate of **$0.0949**. Later revision runs are recorded separately below and in REALISTIC_VALIDATION.md. This uses $0.40/million input and $1.60/million output tokens without cached discounts. It is not an invoice and excludes a few small startup/connectivity calls. The scenario runner bounds calls and fixture sizes, but is not an account-wide spend limiter.
 
 ## What this establishes
 
 This checks live provider integration and the expected behavior of a small development set: eight fictional English lease texts and two public photographs across four photo scenarios. It is not a statistically meaningful or held-out accuracy benchmark, legal verification, or an inspection diagnosis. Exact quote membership cannot prove correct interpretation, and signature markers cannot authenticate signing. Owner review remains mandatory. The broader pilot evaluation is described in `EVALUATION.md`.
 
 Photo credits and licence links are in `samples/live/ATTRIBUTION.md`. These sample photos are not associated with the supplied property units. Docker was not available for a runtime check; the native Python application was tested.
+
+## Submission revision regression
+
+Replacing the drawn offline image fixtures with real photographs exposed a stated-term regression in live extraction. The first revision run passed 11/12; the source verifier fix restored 12/12. After the public-form prompt fixes I reran the full original set again: **12/12 passed**, 11 model calls, estimated $0.0227796, recorded in `results/live/submission_final/`. The earlier revision receipts are in `real_photo_regression/` and `real_photo_final/`.
+
+The expanded public-PDF, bilingual and four-photo evaluation passed **17/17**; see [REALISTIC_VALIDATION.md](REALISTIC_VALIDATION.md). The current offline and live screenshots were regenerated after these fixes, and both browser flows include the four-photo issue.
+
+The final expanded submission evaluation reran the original suite at 12/12, the public-form suite at 17/17 and 25 new boundary cases at 25/25. See [test_cases.txt](../test_cases.txt) for all 54 scenario results and [REALISTIC_VALIDATION.md](REALISTIC_VALIDATION.md) for the additional fixes.

@@ -1,24 +1,25 @@
-# Walkthrough preparation
+# Design walkthrough
 
-Start with the owner problem: a wrong lease value or a misleading condition assessment has a practical cost. The design keeps every proposal beside its source and holds consequential writes behind review.
+I designed LeaseWorks around the cost of an incorrect lease value or misleading condition assessment. I keep each proposal beside its source and require explicit review before occupancy or work approval.
 
-## Explain the implementation
+## Agent boundaries
 
-`providers.py` is the replaceable AI boundary. `agents.py` controls the read/interpret/verify/review sequence and the single repair attempt. `rules.py` contains deterministic checks rather than executing model output or JSON expressions. `store.py` controls transactions and the active-lease constraint. `main.py` exposes the API. The frontend joins both flows by unit ID.
+I use two bounded agent workflows. The lease agent reads source segments, extracts a typed proposal, verifies citations and types, and can request one repair using verifier feedback. It then runs the owner policy checks and waits for review. The issue agent interprets image bytes, verifies image coverage and proposes a unit-linked work order for review.
 
-Show the valid sample, a rent source citation, the two-photo report and one owner correction. Show a problematic lease and explain PASS/FAIL/NOT_DETERMINABLE. Demonstrate that a lease upload does not occupy a unit and that dismissing a flag cannot override a rule failure.
+`providers.py` is the replaceable model interface; `agents.py` controls these workflows. `rules.py` evaluates policy without executing source expressions or model output. `store.py` owns transactions and the active-lease constraint. `main.py` exposes the API. The frontend joins both flows around the selected unit.
 
-## Questions to be ready for
+I deliberately keep database writes and contractor dispatch outside the model's authority. The default offline provider is a disclosed testing adapter; the live adapter performs document and image inference through the Responses API.
 
-- Why use a bounded workflow? The agents interpret and prepare proposals but policy, money-related fields and occupancy need explicit controls. The model has no direct database or dispatch tools.
-- Is offline extraction real AI? No. It is a disclosed stub allowed by the brief. Live mode uses structured text and image inference, and still needs an accuracy evaluation with an API key.
-- What does a citation prove? The passage exists at the recorded location. It does not guarantee the interpretation is right. That is why the original source and correction workflow matter.
-- Why SQLite? It makes the exercise easy to run and transactions easy to inspect. PostgreSQL, a job queue and tenant-scoped object storage come before multiple app instances.
-- What prevents two leases claiming one unit? A transactional availability recheck, serialized write transaction and unique index on active lease per unit.
-- Why preserve the original availability? R7 is about availability before linking. A correctly approved lease should not turn into a historical failure after it occupies the unit.
-- Why Decimal and calendar months? Financial amounts need exact arithmetic and contract terms do not fit fixed 30-day approximations.
-- What is missing for production? Authenticated roles, organisation isolation, OCR, legal/owner rule conventions, upload scanning, asynchronous jobs, retention controls, observability and live quality measurement.
-- Why not assign contractors automatically? The exercise asks for drafts. Dispatch and financial commitments need additional approval, scope and vendor controls.
-- What would you improve first? Reduce review effort with an exception-first queue and better intake, then measure review time and correction rate with users.
+## Decisions and trade-offs
 
-Read the code and run the demo before the interview. Be able to explain and change the parts above rather than relying on the README alone.
+- I use exact source quotes and offsets to make the proposal inspectable. Citation membership proves that text exists, not that its interpretation is correct. Owner corrections preserve original values.
+- I use SQLite for reproducible local startup and transactional approval. A job queue, PostgreSQL and tenant-scoped object storage are the next infrastructure steps.
+- I recheck availability inside the activation transaction and enforce one active lease per unit. Historical R7 results retain the availability snapshot from ingestion.
+- I use Decimal for money and calendar-month arithmetic for stated fixed terms. I do not derive missing monthly or annual amounts merely to make rules pass.
+- I treat signature markers as documentary evidence requiring manual inspection, not proof of authenticity.
+- I distinguish reporter claims from visible photo evidence. Appearance cannot establish equipment age, internal faults or repair cost.
+- I leave authentication, organisation isolation, OCR, legally reviewed policy conventions and vendor dispatch for a production pilot.
+
+## Product direction
+
+I would first reduce review effort with an exception-focused queue and better intake prompts. I would establish review-time and correction-rate baselines with users before setting numerical improvement targets. My first-30-days plan explains how I would run that pilot with the team.

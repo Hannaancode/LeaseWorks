@@ -12,7 +12,7 @@ py -3.12 -m venv .venv
 
 Open http://127.0.0.1:8000 and keep the terminal running. Ctrl+C stops it. Records survive restarts. For a fresh test, stop it, rename `var` to a backup folder and restart.
 
-The default offline demo understands the labelled sample leases and uses scripted results only for the two exact synthetic images. To evaluate actual language and photos, stop the server and privately configure live mode:
+The default offline demo understands the labelled sample leases and uses scripted results only for the four exact real sample photographs. To evaluate actual language and photos, stop the server and privately configure live mode:
 
 ```powershell
 $env:MODEL_PROVIDER = "openai"
@@ -21,7 +21,7 @@ $env:OPENAI_API_KEY = Read-Host "Enter your API key"
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
-Live calls incur provider charges. Live mode adds Prose lease and Use actual AC photos. The temporary test key is not bundled. The Python startup command does not automatically load an `.env` file.
+Live calls incur provider charges. Live mode adds Prose lease and uses AI inference for the real sample photographs. An API credential is configured on the server and is never bundled. The Python startup command does not automatically load an `.env` file.
 
 ## Try these checks
 
@@ -38,7 +38,8 @@ Use a fresh database for the approval flow, then restart fresh when repeating av
 | With problems | Five failed checks; lease cannot be activated |
 | Missing fields | Unknown values and NOT DETERMINABLE checks |
 | Occupied unit | Availability fails; existing occupancy remains |
-| Use two test images | Two scripted observations with source image references |
+| Use real sample photos | Two real photographs with labelled reference assessments offline or model inference live |
+| Use all four photos | Four real photographs, all covered by observations |
 | Correct a photo assessment after accepting work | Work returns to pending and the original observation remains recorded |
 | Reject the work order | Rejection shown and recorded; no contractor contacted |
 | Accept all valid lease fields and review both signature flags, then approve | Unit becomes occupied and approved lease is immutable |
@@ -48,7 +49,13 @@ Use a fresh database for the approval flow, then restart fresh when repeating av
 | Upload a corrupt PDF or a fake JPG | Explicit validation error; no partial record |
 | Resize browser to a narrow phone width | Single-column workspace; unit navigation scrolls horizontally |
 | Live mode → Prose lease | Real AI extraction; verify quotes manually before accepting |
-| Live mode → Use actual AC photos | Real image assessment and work-order draft; public photo credits available |
+| Live mode → Use real sample photos | Real image assessment and work-order draft; public photo credits available |
 | Live mode → upload `samples/live/prose_conflict.txt` or `prose_ambiguous_dates.txt` | Conflicting rent or unresolved dates require owner correction |
 
 Review the original lease for signature authenticity and inspect photos before relying on condition assessments. The prototype prepares proposals; your explicit reviews determine approval.
+
+## Public forms and realistic scenarios
+
+Run `python tests/realistic_validation.py --prepare-only` to download the original public PDFs into `test-results/public-leases/` and create a fictional, unsigned completion of the Queensland form. This preparation makes no AI calls. In live mode upload these PDFs or the fictional TXT cases under `samples/realistic/`. Blank forms should leave rent and tenant unknown, weekly rent should not become monthly rent, and the 49-page QSTP template should return the documented 30-page-limit error. For the mixed-currency case, R6 must not pass.
+
+Select **Use all four photos** to inspect AC, corroded coil, heater and faucet photographs together. Every photo must have a linked assessment. A running faucet alone does not prove a leak, and an exterior photograph cannot establish actual equipment age or hidden faults.

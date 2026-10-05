@@ -50,6 +50,10 @@ Both browser scripts use fresh temporary storage and default to the offline prov
 
 The earlier live evaluation remains 12/12 passing on its final small integration set; see LIVE_VALIDATION.md. This broader pass added deterministic, mocked-provider and browser checks, not new paid model calls. Saved live outputs were checked against the stricter boundaries, which does not replace a new inference benchmark.
 
-No claim is made that every future AI interpretation will be correct. Arabic, scanned-document OCR, authenticated users, organisation isolation and production deployment remain outside scope. Native Python startup was exercised on Linux; a Windows machine and Docker runtime were not available for execution here.
+No claim is made that every future AI interpretation will be correct. A translated Arabic interface, scanned-document OCR, authenticated users, organisation isolation and production deployment remain outside scope. Native Python startup was exercised on Linux; a Windows machine and Docker runtime were not available for execution here.
 
 Two non-failing warnings remain: the framework TestClient adapter deprecation and Pillow's expected decompression warning when deliberately submitting an oversized image. The image request is rejected. An injected database outage returns a server error while rolling back safely; this prototype does not implement storage-outage retry/recovery jobs.
+
+## Follow-on validation
+
+The later public-form and real-photo pass is recorded in [REALISTIC_VALIDATION.md](REALISTIC_VALIDATION.md). It includes a bilingual fictional Qatar lease; that one sample does not establish general Arabic extraction accuracy or a complete RTL interface. Current totals and browser evidence are in [VALIDATION.md](VALIDATION.md).
