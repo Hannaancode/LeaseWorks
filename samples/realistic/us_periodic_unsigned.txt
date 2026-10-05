@@ -1,0 +1,8 @@
+This document is a fictional test contract, not an executed tenancy agreement. All names and addresses below are invented.
+RESIDENTIAL RENTAL — FICTIONAL US FORMAT
+Example Property Owner LLC rents unit EXTERNAL-US-12 to Example Resident. Currency is USD.
+The tenancy starts on November 1, 2026 and continues month to month with no fixed expiry date or stated term in months.
+Monthly rent is USD 1,200. The security deposit is USD 600. No annual amount is stated.
+Renewal is automatic each month; either party may terminate by giving thirty days' written notice.
+Rent increases only as mutually agreed in writing; no percentage or defined index is specified.
+Both signature blocks are blank and the agreement has not been executed.

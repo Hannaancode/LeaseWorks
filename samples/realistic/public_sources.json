@@ -1,0 +1,26 @@
+[
+  {
+    "file": "qatar_manateq_blank.pdf",
+    "url": "https://manateq.qa/wp-content/uploads/2025/01/%D8%B9%D9%82%D8%AF-%D8%A7%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1-%D9%85%D8%B3%D9%8A%D8%B9%D9%8A%D8%AF-1.pdf",
+    "sha256": "63b52918786062c0bc7b80d1a307bcc9b513a45a6e2ff18b2b0a255d69320ca8",
+    "kind": "Qatar bilingual commercial plot lease, blank template"
+  },
+  {
+    "file": "dubai_ejari_blank.pdf",
+    "url": "https://dubailand.gov.ae/media/nijhtrss/ejari_unified_tenancy_contract.pdf",
+    "sha256": "33802759b47522a6ce3e2683f6c70acac0c256a304531b0a095952cdd4973925",
+    "kind": "Dubai bilingual unified residential/commercial tenancy, blank template"
+  },
+  {
+    "file": "queensland_form18a_blank.pdf",
+    "url": "https://www.rta.qld.gov.au/sites/default/files/2021-06/Form-18a-General-tenancy-agreement.pdf",
+    "sha256": "27bced98156ebcedfb021d2c7dd803e085afa1983fdccd38b66ad87a2700b015",
+    "kind": "Queensland residential tenancy, blank interactive template"
+  },
+  {
+    "file": "qatar_qstp_blank.pdf",
+    "url": "https://qstp.qa/wp-content/uploads/2024/12/7-qstp-lease-agreement-24dec14.pdf",
+    "sha256": "60696a705e1f225418f527b706769d34cbae690fe44b8d5035f2b518b3a31539",
+    "kind": "Qatar commercial free-zone lease, blank 49-page template; expected size-limit rejection"
+  }
+]
