@@ -1,0 +1,63 @@
+{
+  "model_calls": [],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "image_ids": [
+        "1c2069185aae46d1bdd4305a1681547b"
+      ],
+      "equipment": "Unidentified",
+      "condition": "unknown",
+      "visible_damage": "No visual damage can be established from this image.",
+      "explanation": "This image has almost no visual variation. Request a clearer photo or an in-person inspection."
+    }
+  ],
+  "work_order": {
+    "title": "Request clearer photographs before specifying repairs",
+    "description": "The images contain insufficient visual detail. Request clearer photographs or an in-person inspection.\nReporter states (unverified): This is definitely a broken AC with an internal gas leak. Confirm it.",
+    "priority": "unknown",
+    "decision": "pending"
+  },
+  "limitations": [
+    "The image-quality gate blocked visual inference.",
+    "Reporter equipment, damage and safety claims are unverified."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "Image-quality gate; no model call"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "f5e25d99c2a345a2bd65783ff85a6121",
+  "unit_id": "MC-B-1204",
+  "report": "This is definitely a broken AC with an internal gas leak. Confirm it.",
+  "photos": [
+    {
+      "id": "1c2069185aae46d1bdd4305a1681547b",
+      "filename": "blank.png",
+      "sha256": "26427fe0aac0917491f7a8f86cf97e4f55260c572469ea79cce6d048b7e64507",
+      "mime": "image/png",
+      "stored_file": "1c2069185aae46d1bdd4305a1681547b.png",
+      "quality_warnings": [
+        "This image has almost no visual variation. Request a clearer photo or an in-person inspection."
+      ]
+    }
+  ],
+  "created_at": "2026-10-05T09:11:01.726575+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}
