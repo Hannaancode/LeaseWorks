@@ -1,0 +1,68 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 9.324,
+      "input_tokens": 2744,
+      "output_tokens": 145
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "Wall-mounted air conditioning unit",
+      "condition": "appears_new",
+      "visible_damage": "",
+      "explanation": "The wall-mounted air conditioning unit appears intact without visible cracks, discoloration, or physical damage. No obvious issues such as broken vents or stains are visible in the image.",
+      "image_ids": [
+        "4bc53984225f40538a4c31b3b7214f07"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Inspection Request for Air Conditioning Unit",
+    "description": "Inspect the wall-mounted air conditioning unit shown in the image for any functional or hidden issues, as no visible damage is evident in the provided photo.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Only the front view of the indoor unit is visible; external or internal components cannot be assessed.",
+    "No operational status can be determined from the image alone."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "7412fab200a4407697d88095ba778eeb",
+  "unit_id": "MC-B-1204",
+  "report": "Please inspect the air conditioning unit.",
+  "photos": [
+    {
+      "id": "4bc53984225f40538a4c31b3b7214f07",
+      "filename": "wall_ac.jpg",
+      "sha256": "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706",
+      "mime": "image/jpeg",
+      "stored_file": "4bc53984225f40538a4c31b3b7214f07.jpeg",
+      "quality_warnings": []
+    }
+  ],
+  "created_at": "2026-10-05T09:16:41.374631+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}
