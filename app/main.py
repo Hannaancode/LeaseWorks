@@ -409,6 +409,8 @@ def create_app(db_path=None, provider=None):
             "prose_lease.txt": "prose_valid.txt",
             "photo_wall_ac.jpg": "wall_ac.jpg",
             "photo_corrosion.jpg": "rusty_ac.jpg",
+            "photo_water_heater.jpg": "water_heater.jpg",
+            "photo_faucet.jpg": "faucet.jpg",
             "photo_attribution.md": "ATTRIBUTION.md",
         }
         if name in live_samples:
@@ -418,8 +420,6 @@ def create_app(db_path=None, provider=None):
             "lease_problematic.txt",
             "lease_occupied.txt",
             "lease_missing.txt",
-            "sample_leak.png",
-            "sample_ac.png",
         }
         if name not in allowed:
             raise HTTPException(404, "Sample not found")

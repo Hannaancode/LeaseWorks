@@ -33,7 +33,39 @@ def read_document(filename: str, raw: bytes) -> list[dict]:
         if reader.is_encrypted or len(reader.pages) > 30:
             raise ValueError("Use an unencrypted PDF of at most 30 pages")
         for i, page in enumerate(reader.pages, 1):
-            add(page.extract_text() or "", f"Page {i}")
+            # PDFs wrap prose into arbitrary display lines. One canonical page
+            # passage keeps sentences together and makes citations less brittle.
+            add(" ".join((page.extract_text() or "").split()), f"Page {i}")
+            # Filled AcroForms can store values only in widgets, outside the page
+            # text stream. Keep their names and page locations as source evidence.
+            seen_fields = set()
+            for reference in page.get("/Annots", []):
+                widget = reference.get_object()
+                if widget.get("/Subtype") != "/Widget":
+                    continue
+                inherited = {}
+                node = widget
+                for _ in range(12):
+                    for key in ("/T", "/V", "/FT"):
+                        if key not in inherited and key in node:
+                            inherited[key] = node[key]
+                    parent = node.get("/Parent")
+                    if not parent:
+                        break
+                    node = parent.get_object()
+                name = str(inherited.get("/T", "Unnamed field"))
+                value = inherited.get("/V")
+                if inherited.get("/FT") not in ("/Tx", "/Ch", "/Btn"):
+                    continue
+                if isinstance(value, list):
+                    value = ", ".join(str(item) for item in value)
+                if value is None or not str(value).strip() or str(value) == "/Off":
+                    continue
+                marker = (name, str(value))
+                if marker in seen_fields:
+                    continue
+                seen_fields.add(marker)
+                add(f"PDF form field {name}: {value}", f"Page {i}, form field {name}")
     elif suffix == ".docx":
         try:
             with ZipFile(BytesIO(raw)) as archive:

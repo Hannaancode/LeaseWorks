@@ -1,13 +1,28 @@
 """Bounded agent workflows: observe, verify, check policy, propose, await review."""
 
 import hashlib
+import json
 from .domain import FIELD_TYPES, validate_value, IssueProposal
-from .normalization import ambiguous_date_reason, normalize_frequency, conflicting_monthly_rents
+from .normalization import ambiguous_date_reason, normalize_frequency, normalize_stated_term, conflicting_monthly_rents, explicit_money_currencies
 from .rules import evaluate
 
 
 def lease_agent(provider, segments, units, ruleset):
     source = {s["id"]: s for s in segments}
+    citation_corrections = []
+
+    def locate_citations(candidate):
+        proposed = {field.name: [citation.model_dump() for citation in field.evidence] for field in candidate.fields}
+        for field in candidate.fields:
+            for citation in field.evidence:
+                segment = source.get(citation.segment_id)
+                if not citation.quote or (segment and citation.quote in segment["text"]):
+                    continue
+                matches = [segment for segment in segments if citation.quote in segment["text"]]
+                if len(matches) == 1:
+                    citation_corrections.append({"field": field.name, "proposed_segment_id": citation.segment_id, "resolved_segment_id": matches[0]["id"], "quote": citation.quote})
+                    citation.segment_id = matches[0]["id"]
+        return proposed
 
     def verifier_feedback(candidate):
         errors = []
@@ -26,22 +41,31 @@ def lease_agent(provider, segments, units, ruleset):
             for citation in field.evidence:
                 segment = source.get(citation.segment_id)
                 if not segment or not citation.quote or citation.quote not in segment["text"]:
-                    errors.append(f"{field.name}: quote is not present in cited source segment {citation.segment_id}")
+                    errors.append(f"{field.name}: quote is not present in cited source segment {citation.segment_id}; rejected quote: {citation.quote!r}")
         return errors
 
     proposal = provider.lease(segments)
+    proposed_evidence = locate_citations(proposal)
     normalized_originals = {}
     for field in proposal.fields:
         original = normalize_frequency(field)
+        if original is None:
+            original = normalize_stated_term(field, segments)
         if original is not None:
             normalized_originals[field.name] = original
     model_calls = [provider.last_call] if getattr(provider, "last_call", None) else []
     feedback = verifier_feedback(proposal)
     # One evidence-driven repair, never an unbounded autonomous loop.
     if feedback:
-        proposal = provider.lease(segments, feedback=feedback)
+        # Requests are stateless: include the rejected proposal, not just errors,
+        # so the model can actually repair the precise prior citations.
+        repair_feedback = feedback + ["Previous proposal to repair: " + json.dumps(proposal.model_dump(), ensure_ascii=False)]
+        proposal = provider.lease(segments, feedback=repair_feedback)
+        proposed_evidence = locate_citations(proposal)
         for field in proposal.fields:
             original = normalize_frequency(field)
+            if original is None:
+                original = normalize_stated_term(field, segments)
             if original is not None:
                 normalized_originals[field.name] = original
         if getattr(provider, "last_call", None):
@@ -85,6 +109,7 @@ def lease_agent(provider, segments, units, ruleset):
             "value": f.value,
             "original_value": original_dates.get(f.name, normalized_originals.get(f.name, f.value)),
             "evidence": evidence,
+            "proposed_evidence": proposed_evidence.get(f.name, []),
             "explanation": f.explanation,
             "invalid": invalid,
             "decision": "pending",
@@ -129,6 +154,13 @@ def lease_agent(provider, segments, units, ruleset):
         flag("contradiction", "Different source clauses state different monthly rents; owner correction is required.", "monthly_rent")
     for name, reason in date_ambiguities.items():
         flag("ambiguous_date", reason, name)
+    mixed_currencies = explicit_money_currencies(segments)
+    if mixed_currencies:
+        message = "Different explicit monetary currencies occur in the source: " + ", ".join(sorted(mixed_currencies)) + ". Resolve currencies before comparing amounts."
+        for name in ("currency", "rent_amount", "monthly_rent", "annual_rent", "deposit_amount"):
+            fields[name]["value"] = None
+            fields[name]["explanation"] += " " + message
+        flag("currency_conflict", message, "currency")
     for name in ("landlord_signed", "tenant_signed"):
         if fields[name]["value"] is True:
             flag("signature", f"{name}: documentary marker only; manually inspect the signed original.", name)
@@ -149,10 +181,11 @@ def lease_agent(provider, segments, units, ruleset):
         "availability_snapshot": availability,
         "unit_id": uid if uid in units else None,
         "model_calls": model_calls,
+        "citation_corrections": citation_corrections,
         "trace": [
             {"step": "read", "detail": f"{len(segments)} source segments"},
             {"step": "extract", "detail": provider.name},
-            {"step": "verify", "detail": "Check schema, exact quote membership and locations"},
+            {"step": "verify", "detail": f"Check schema, exact quote membership and locations; {len(citation_corrections)} uniquely located exact quotes corrected"},
             {"step": "repair", "detail": "One verifier-feedback retry: " + "; ".join(feedback) if feedback else "No repair needed"},
             {"step": "validate", "detail": f"{len(rules)} deterministic policy checks using ruleset {ruleset['version']}"},
             {"step": "await_review", "detail": "No occupancy write until explicit approval"},
