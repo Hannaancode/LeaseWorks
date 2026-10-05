@@ -1,0 +1,808 @@
+{
+  "unit_id": "MC-B-1204",
+  "label": "Apartment 1204",
+  "type": "2BR",
+  "area_sqm": 118,
+  "parking_bay": "B-77",
+  "status": "occupied",
+  "property_id": "PROP-MC",
+  "property": "Marina Crest Residences",
+  "building": "Tower B",
+  "building_id": "MC-B",
+  "location": "Lusail Marina District, Doha",
+  "active_lease_id": "362f8adeb62d47ef9414cf529f57591d",
+  "leases": [
+    {
+      "fields": {
+        "landlord": {
+          "value": "Marina Crest Holdings W.L.L.",
+          "original_value": "Marina Crest Holdings W.L.L.",
+          "evidence": [
+            {
+              "segment_id": "s2",
+              "quote": "Marina Crest Holdings W.L.L. as landlord",
+              "location": "Line 2",
+              "start": 31,
+              "end": 71
+            }
+          ],
+          "explanation": "The landlord is explicitly named as Marina Crest Holdings W.L.L. in segment s2.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "tenant": {
+          "value": "Example Tenant Two",
+          "original_value": "Example Tenant Two",
+          "evidence": [
+            {
+              "segment_id": "s2",
+              "quote": "Example Tenant Two as tenant",
+              "location": "Line 2",
+              "start": 76,
+              "end": 104
+            }
+          ],
+          "explanation": "The tenant is explicitly named as Example Tenant Two in segment s2.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "unit_id": {
+          "value": "MC-B-1204",
+          "original_value": "MC-B-1204",
+          "evidence": [
+            {
+              "segment_id": "s3",
+              "quote": "unit MC-B-1204",
+              "location": "Line 3",
+              "start": 17,
+              "end": 31
+            }
+          ],
+          "explanation": "The unit ID is MC-B-1204 as stated in segment s3.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "commencement_date": {
+          "value": "2026-10-01",
+          "original_value": "2026-10-01",
+          "evidence": [
+            {
+              "segment_id": "s4",
+              "quote": "Commencement is 1 October 2026",
+              "location": "Line 4",
+              "start": 33,
+              "end": 63
+            }
+          ],
+          "explanation": "The commencement date is clearly stated as 1 October 2026 in segment s4.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "expiry_date": {
+          "value": "2027-09-30",
+          "original_value": "2027-09-30",
+          "evidence": [
+            {
+              "segment_id": "s4",
+              "quote": "the last inclusive day is 30 September 2027",
+              "location": "Line 4",
+              "start": 68,
+              "end": 111
+            }
+          ],
+          "explanation": "The expiry date is explicitly the last inclusive day September 30, 2027, in segment s4.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "term_months": {
+          "value": 12,
+          "original_value": 12,
+          "evidence": [
+            {
+              "segment_id": "s4",
+              "quote": "The fixed term is twelve months",
+              "location": "Line 4",
+              "start": 0,
+              "end": 31
+            }
+          ],
+          "explanation": "The fixed term is stated as twelve months in segment s4.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "rent_amount": {
+          "value": "8500",
+          "original_value": "8500",
+          "evidence": [
+            {
+              "segment_id": "s5",
+              "quote": "QAR 8,500 each month",
+              "location": "Line 5",
+              "start": 21,
+              "end": 41
+            }
+          ],
+          "explanation": "The rent amount per payment is 8500 QAR as stated in segment s5.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "rent_frequency": {
+          "value": "monthly",
+          "original_value": "monthly",
+          "evidence": [
+            {
+              "segment_id": "s5",
+              "quote": "each month",
+              "location": "Line 5",
+              "start": 31,
+              "end": 41
+            }
+          ],
+          "explanation": "The rent frequency is monthly, as per the phrase 'each month' in segment s5.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "currency": {
+          "value": "QAR",
+          "original_value": "QAR",
+          "evidence": [
+            {
+              "segment_id": "s5",
+              "quote": "QAR 8,500",
+              "location": "Line 5",
+              "start": 21,
+              "end": 30
+            }
+          ],
+          "explanation": "The currency is QAR as indicated in the rent amount in segment s5.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "monthly_rent": {
+          "value": "8500",
+          "original_value": "8500",
+          "evidence": [
+            {
+              "segment_id": "s5",
+              "quote": "QAR 8,500 each month",
+              "location": "Line 5",
+              "start": 21,
+              "end": 41
+            }
+          ],
+          "explanation": "Monthly rent is explicitly stated as 8500 QAR in segment s5.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "annual_rent": {
+          "value": "102000",
+          "original_value": "102000",
+          "evidence": [
+            {
+              "segment_id": "s5",
+              "quote": "The stated annual rent is QAR 102,000",
+              "location": "Line 5",
+              "start": 43,
+              "end": 80
+            }
+          ],
+          "explanation": "Annual rent is explicitly stated as 102000 QAR in segment s5.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "deposit_amount": {
+          "value": "8500",
+          "original_value": "8500",
+          "evidence": [
+            {
+              "segment_id": "s6",
+              "quote": "A security deposit of QAR 8,500",
+              "location": "Line 6",
+              "start": 0,
+              "end": 31
+            }
+          ],
+          "explanation": "The security deposit amount is explicitly 8500 QAR as stated in segment s6.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "escalation_clause": {
+          "value": "On each annual renewal the monthly rent shall increase by 3 percent.",
+          "original_value": "On each annual renewal the monthly rent shall increase by 3 percent.",
+          "evidence": [
+            {
+              "segment_id": "s7",
+              "quote": "On each annual renewal the monthly rent shall increase by 3 percent.",
+              "location": "Line 7",
+              "start": 0,
+              "end": 68
+            }
+          ],
+          "explanation": "The escalation clause is clearly described in segment s7 with a 3% increase each annual renewal.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "escalation_defined": {
+          "value": true,
+          "original_value": true,
+          "evidence": [
+            {
+              "segment_id": "s7",
+              "quote": "increase by 3 percent",
+              "location": "Line 7",
+              "start": 46,
+              "end": 67
+            }
+          ],
+          "explanation": "The escalation is defined as a fixed 3 percent increase annually in segment s7.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "renewal_terms": {
+          "value": "A renewal request must be received in writing 60 days before expiry and any renewal lasts twelve months.",
+          "original_value": "A renewal request must be received in writing 60 days before expiry and any renewal lasts twelve months.",
+          "evidence": [
+            {
+              "segment_id": "s8",
+              "quote": "A renewal request must be received in writing 60 days before expiry and any renewal lasts twelve months.",
+              "location": "Line 8",
+              "start": 0,
+              "end": 104
+            }
+          ],
+          "explanation": "Renewal terms are clearly stated including notice period and renewal duration in segment s8.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "termination_terms": {
+          "value": "Either party must give 60 days written notice for termination subject to the fixed term.",
+          "original_value": "Either party must give 60 days written notice for termination subject to the fixed term.",
+          "evidence": [
+            {
+              "segment_id": "s9",
+              "quote": "Either party must give 60 days written notice for termination subject to the fixed term.",
+              "location": "Line 9",
+              "start": 0,
+              "end": 88
+            }
+          ],
+          "explanation": "Termination terms are explicitly 60 days written notice by either party as per segment s9.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "landlord_signed": {
+          "value": true,
+          "original_value": true,
+          "evidence": [
+            {
+              "segment_id": "s10",
+              "quote": "Landlord: [signed] Fictional Landlord Representative",
+              "location": "Line 10",
+              "start": 0,
+              "end": 52
+            }
+          ],
+          "explanation": "The landlord signature is indicated by [signed] in segment s10.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        },
+        "tenant_signed": {
+          "value": true,
+          "original_value": true,
+          "evidence": [
+            {
+              "segment_id": "s11",
+              "quote": "Tenant: [signed] Example Tenant Two",
+              "location": "Line 11",
+              "start": 0,
+              "end": 35
+            }
+          ],
+          "explanation": "The tenant signature is indicated by [signed] in segment s11.",
+          "invalid": false,
+          "decision": "accepted",
+          "origin": "model",
+          "review_reason": "Verified this field against the sample source"
+        }
+      },
+      "flags": [
+        {
+          "id": "5254b25cee9a26e7",
+          "kind": "signature",
+          "message": "landlord_signed: documentary marker only; manually inspect the signed original.",
+          "field": "landlord_signed",
+          "decision": "accepted",
+          "review_reason": "Inspected original fixture signature marker"
+        },
+        {
+          "id": "dbff617b1e7427fb",
+          "kind": "signature",
+          "message": "tenant_signed: documentary marker only; manually inspect the signed original.",
+          "field": "tenant_signed",
+          "decision": "accepted",
+          "review_reason": "Inspected original fixture signature marker"
+        }
+      ],
+      "rules": [
+        {
+          "id": "R1",
+          "description": "Security deposit must be at least one month's rent.",
+          "check": "deposit_amount >= monthly_rent",
+          "severity": "high",
+          "status": "PASS",
+          "reason": "Deposit 8500 compared with monthly rent 8500.",
+          "evidence": [
+            {
+              "segment_id": "s6",
+              "quote": "A security deposit of QAR 8,500",
+              "location": "Line 6",
+              "start": 0,
+              "end": 31
+            },
+            {
+              "segment_id": "s5",
+              "quote": "QAR 8,500 each month",
+              "location": "Line 5",
+              "start": 21,
+              "end": 41
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "description": "Lease must contain a defined rent escalation clause (an actual mechanism or percentage, not merely 'as mutually agreed').",
+          "check": "escalation_clause.is_defined == true",
+          "severity": "medium",
+          "status": "PASS",
+          "reason": "Defined escalation mechanism proposed with cited clause.",
+          "evidence": [
+            {
+              "segment_id": "s7",
+              "quote": "On each annual renewal the monthly rent shall increase by 3 percent.",
+              "location": "Line 7",
+              "start": 0,
+              "end": 68
+            },
+            {
+              "segment_id": "s7",
+              "quote": "increase by 3 percent",
+              "location": "Line 7",
+              "start": 46,
+              "end": 67
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "description": "Fixed term must not exceed 36 months without owner approval.",
+          "check": "term_months <= 36",
+          "severity": "medium",
+          "status": "PASS",
+          "reason": "Stated term is 12 months; limit is 36. Longer terms need owner approval outside this prototype.",
+          "evidence": [
+            {
+              "segment_id": "s4",
+              "quote": "The fixed term is twelve months",
+              "location": "Line 4",
+              "start": 0,
+              "end": 31
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "description": "Expiry date must be after the commencement date, and the stated term length must match the dates.",
+          "check": "expiry_date > commencement_date AND term_months == months_between(commencement_date, expiry_date)",
+          "severity": "high",
+          "status": "PASS",
+          "reason": "Expected expiry 2027-09-30 (inclusive) or 2027-10-01 (exclusive); stated 2027-09-30.",
+          "evidence": [
+            {
+              "segment_id": "s4",
+              "quote": "Commencement is 1 October 2026",
+              "location": "Line 4",
+              "start": 33,
+              "end": 63
+            },
+            {
+              "segment_id": "s4",
+              "quote": "the last inclusive day is 30 September 2027",
+              "location": "Line 4",
+              "start": 68,
+              "end": 111
+            },
+            {
+              "segment_id": "s4",
+              "quote": "The fixed term is twelve months",
+              "location": "Line 4",
+              "start": 0,
+              "end": 31
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "description": "Both parties (landlord and tenant) must be identified and the lease must be signed by both.",
+          "check": "landlord.present AND tenant.present AND landlord.signed AND tenant.signed",
+          "severity": "high",
+          "status": "PASS",
+          "reason": "Both parties identified and signature markers reported; authenticity is not verified.",
+          "evidence": [
+            {
+              "segment_id": "s2",
+              "quote": "Marina Crest Holdings W.L.L. as landlord",
+              "location": "Line 2",
+              "start": 31,
+              "end": 71
+            },
+            {
+              "segment_id": "s2",
+              "quote": "Example Tenant Two as tenant",
+              "location": "Line 2",
+              "start": 76,
+              "end": 104
+            },
+            {
+              "segment_id": "s10",
+              "quote": "Landlord: [signed] Fictional Landlord Representative",
+              "location": "Line 10",
+              "start": 0,
+              "end": 52
+            },
+            {
+              "segment_id": "s11",
+              "quote": "Tenant: [signed] Example Tenant Two",
+              "location": "Line 11",
+              "start": 0,
+              "end": 35
+            }
+          ]
+        },
+        {
+          "id": "R6",
+          "description": "Annual rent must reconcile with the stated monthly rent (annual == monthly x 12).",
+          "check": "annual_rent == monthly_rent * 12",
+          "severity": "low",
+          "status": "PASS",
+          "reason": "Annual rent 102000; monthly × 12 = 102000.",
+          "evidence": [
+            {
+              "segment_id": "s5",
+              "quote": "The stated annual rent is QAR 102,000",
+              "location": "Line 5",
+              "start": 43,
+              "end": 80
+            },
+            {
+              "segment_id": "s5",
+              "quote": "QAR 8,500 each month",
+              "location": "Line 5",
+              "start": 21,
+              "end": 41
+            }
+          ]
+        },
+        {
+          "id": "R7",
+          "description": "The leased unit must exist in the owner's property/unit records and must be marked available before a new lease is linked.",
+          "check": "unit_id exists in units.json AND unit.status == 'available'",
+          "severity": "high",
+          "status": "PASS",
+          "reason": "Unit MC-B-1204 exists and was available before linking.",
+          "evidence": [
+            {
+              "segment_id": "s3",
+              "quote": "unit MC-B-1204",
+              "location": "Line 3",
+              "start": 17,
+              "end": 31
+            }
+          ]
+        }
+      ],
+      "ruleset": {
+        "ruleset_name": "Marina Crest Holdings — Lease Acceptance Standards",
+        "version": "1.0",
+        "notes": "The agent must validate each extracted lease against these rules and report, for each rule, PASS / FAIL / NOT_DETERMINABLE with a short reason and (where possible) the source clause it relied on.",
+        "rules": [
+          {
+            "id": "R1",
+            "description": "Security deposit must be at least one month's rent.",
+            "check": "deposit_amount >= monthly_rent",
+            "severity": "high"
+          },
+          {
+            "id": "R2",
+            "description": "Lease must contain a defined rent escalation clause (an actual mechanism or percentage, not merely 'as mutually agreed').",
+            "check": "escalation_clause.is_defined == true",
+            "severity": "medium"
+          },
+          {
+            "id": "R3",
+            "description": "Fixed term must not exceed 36 months without owner approval.",
+            "check": "term_months <= 36",
+            "severity": "medium"
+          },
+          {
+            "id": "R4",
+            "description": "Expiry date must be after the commencement date, and the stated term length must match the dates.",
+            "check": "expiry_date > commencement_date AND term_months == months_between(commencement_date, expiry_date)",
+            "severity": "high"
+          },
+          {
+            "id": "R5",
+            "description": "Both parties (landlord and tenant) must be identified and the lease must be signed by both.",
+            "check": "landlord.present AND tenant.present AND landlord.signed AND tenant.signed",
+            "severity": "high"
+          },
+          {
+            "id": "R6",
+            "description": "Annual rent must reconcile with the stated monthly rent (annual == monthly x 12).",
+            "check": "annual_rent == monthly_rent * 12",
+            "severity": "low"
+          },
+          {
+            "id": "R7",
+            "description": "The leased unit must exist in the owner's property/unit records and must be marked available before a new lease is linked.",
+            "check": "unit_id exists in units.json AND unit.status == 'available'",
+            "severity": "high"
+          }
+        ]
+      },
+      "availability_snapshot": {
+        "MC-A-0301": "available",
+        "MC-A-0302": "occupied",
+        "MC-B-0902": "available",
+        "MC-B-1204": "available",
+        "MC-B-1205": "occupied"
+      },
+      "unit_id": "MC-B-1204",
+      "model_calls": [
+        {
+          "model": "gpt-4.1-mini-2025-04-14",
+          "latency_seconds": 11.291,
+          "input_tokens": 1087,
+          "output_tokens": 1047
+        }
+      ],
+      "trace": [
+        {
+          "step": "read",
+          "detail": "12 source segments"
+        },
+        {
+          "step": "extract",
+          "detail": "openai (live text + vision; gpt-4.1-mini)"
+        },
+        {
+          "step": "verify",
+          "detail": "Check schema, exact quote membership and locations"
+        },
+        {
+          "step": "repair",
+          "detail": "No repair needed"
+        },
+        {
+          "step": "validate",
+          "detail": "7 deterministic policy checks using ruleset 1.0"
+        },
+        {
+          "step": "await_review",
+          "detail": "No occupancy write until explicit approval"
+        }
+      ],
+      "id": "362f8adeb62d47ef9414cf529f57591d",
+      "filename": "prose_lease.txt",
+      "stored_file": "362f8adeb62d47ef9414cf529f57591d.txt",
+      "sha256": "0b3b8bf68c244c0a0d1602d387c5626bb844e73c4d7adf487d68d9797c16bc92",
+      "segments": [
+        {
+          "id": "s1",
+          "text": "FICTIONAL RESIDENTIAL LEASE FOR SOFTWARE EVALUATION ONLY",
+          "location": "Line 1"
+        },
+        {
+          "id": "s2",
+          "text": "This agreement is made between Marina Crest Holdings W.L.L. as landlord and Example Tenant Two as tenant.",
+          "location": "Line 2"
+        },
+        {
+          "id": "s3",
+          "text": "The premises are unit MC-B-1204 at Marina Crest Residences, Tower B, Lusail.",
+          "location": "Line 3"
+        },
+        {
+          "id": "s4",
+          "text": "The fixed term is twelve months. Commencement is 1 October 2026 and the last inclusive day is 30 September 2027.",
+          "location": "Line 4"
+        },
+        {
+          "id": "s5",
+          "text": "The tenant shall pay QAR 8,500 each month. The stated annual rent is QAR 102,000.",
+          "location": "Line 5"
+        },
+        {
+          "id": "s6",
+          "text": "A security deposit of QAR 8,500 is due before handover.",
+          "location": "Line 6"
+        },
+        {
+          "id": "s7",
+          "text": "On each annual renewal the monthly rent shall increase by 3 percent.",
+          "location": "Line 7"
+        },
+        {
+          "id": "s8",
+          "text": "A renewal request must be received in writing 60 days before expiry and any renewal lasts twelve months.",
+          "location": "Line 8"
+        },
+        {
+          "id": "s9",
+          "text": "Either party must give 60 days written notice for termination subject to the fixed term.",
+          "location": "Line 9"
+        },
+        {
+          "id": "s10",
+          "text": "Landlord: [signed] Fictional Landlord Representative",
+          "location": "Line 10"
+        },
+        {
+          "id": "s11",
+          "text": "Tenant: [signed] Example Tenant Two",
+          "location": "Line 11"
+        },
+        {
+          "id": "s12",
+          "text": "All parties and signatures in this sample are fictional.",
+          "location": "Line 12"
+        }
+      ],
+      "status": "active",
+      "revision": 22,
+      "created_at": "2026-10-05T07:44:24.850483+00:00",
+      "provider": "openai (live text + vision; gpt-4.1-mini)",
+      "activated_at": "2026-10-05T07:44:42.940888+00:00"
+    }
+  ],
+  "issues": [
+    {
+      "model_calls": [
+        {
+          "model": "gpt-4.1-mini-2025-04-14",
+          "latency_seconds": 11.435,
+          "input_tokens": 5104,
+          "output_tokens": 265
+        }
+      ],
+      "observations": [
+        {
+          "image_indexes": [
+            0
+          ],
+          "equipment": "Wall-mounted air conditioning unit",
+          "condition": "appears_new",
+          "visible_damage": "No visible damage; unit appears clean and intact.",
+          "explanation": "The indoor air conditioning unit shown is clean with no visible cracks, dents, or discoloration. The area around the unit also appears intact.",
+          "image_ids": [
+            "d8e1c916aef445ccbe1cc1cc270057e9"
+          ]
+        },
+        {
+          "image_indexes": [
+            1
+          ],
+          "equipment": "Unidentified coil or condenser coil",
+          "condition": "unknown",
+          "visible_damage": "Inspect the housing; visible mark is uncertain",
+          "explanation": "Owner correction: Owner overrides the scripted condition assessment",
+          "image_ids": [
+            "bbdfb5a7c03a4c5a81f0f1e285e653ae"
+          ],
+          "original": {
+            "image_indexes": [
+              1
+            ],
+            "equipment": "Unidentified coil or condenser coil",
+            "condition": "damaged",
+            "visible_damage": "Severe rust and corrosion on the metal surfaces and fins are bent and broken off.",
+            "explanation": "The coil shows significant rust and corrosion which may affect its function. Several fins are visibly broken and bent. The exact appliance or equipment this coil belongs to cannot be determined from the image alone.",
+            "image_ids": [
+              "bbdfb5a7c03a4c5a81f0f1e285e653ae"
+            ]
+          },
+          "decision": "accepted",
+          "origin": "human",
+          "review_reason": "Owner overrides the scripted condition assessment"
+        }
+      ],
+      "work_order": {
+        "title": "Inspect sink and AC fixtures",
+        "description": "Wall-mounted air conditioning unit (appears_new): No visible damage; unit appears clean and intact.\nUnidentified coil or condenser coil (unknown): Inspect the housing; visible mark is uncertain\nReporter states (unverified): Public-photo evaluation: inspect the visible air conditioning equipment and coil.\nOwner review: Owner overrides the scripted condition assessment",
+        "priority": "routine",
+        "decision": "accepted",
+        "review_reason": "Checked both fixture images and corrected the scope"
+      },
+      "limitations": [
+        "Cannot confirm the exact type or model of the coil equipment.",
+        "The coil image does not provide full context of its installation or function.",
+        "No functional testing possible from images alone."
+      ],
+      "trace": [
+        {
+          "step": "inspect",
+          "detail": "openai (live text + vision; gpt-4.1-mini)"
+        },
+        {
+          "step": "verify",
+          "detail": "Validate image references and typed condition labels"
+        },
+        {
+          "step": "draft",
+          "detail": "No vendor dispatch or financial commitment"
+        },
+        {
+          "step": "await_review",
+          "detail": "Owner can correct, accept or reject draft"
+        }
+      ],
+      "id": "6294674e9ab344858c35b5ad8f537515",
+      "unit_id": "MC-B-1204",
+      "report": "Public-photo evaluation: inspect the visible air conditioning equipment and coil.",
+      "photos": [
+        {
+          "id": "d8e1c916aef445ccbe1cc1cc270057e9",
+          "filename": "photo_wall_ac.jpg",
+          "sha256": "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706",
+          "mime": "image/jpeg",
+          "stored_file": "d8e1c916aef445ccbe1cc1cc270057e9.jpeg",
+          "quality_warnings": []
+        },
+        {
+          "id": "bbdfb5a7c03a4c5a81f0f1e285e653ae",
+          "filename": "photo_corrosion.jpg",
+          "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+          "mime": "image/jpeg",
+          "stored_file": "bbdfb5a7c03a4c5a81f0f1e285e653ae.jpeg",
+          "quality_warnings": []
+        }
+      ],
+      "created_at": "2026-10-05T07:44:37.224124+00:00",
+      "revision": 3,
+      "provider": "openai (live text + vision; gpt-4.1-mini)"
+    }
+  ]
+}
