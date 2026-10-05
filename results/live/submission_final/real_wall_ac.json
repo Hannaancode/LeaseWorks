@@ -1,0 +1,69 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 13.024,
+      "input_tokens": 2744,
+      "output_tokens": 190
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "Wall-mounted air conditioning unit",
+      "condition": "appears_new",
+      "visible_damage": "No visible damage to the air conditioning unit itself.",
+      "explanation": "The air conditioning unit mounted on the wall appears clean and intact with no visible external damage. However, some caulking or sealing material around the pipe connection on the left shows wear or rough application, which should be inspected further to ensure no leaks or insulation issues.",
+      "image_ids": [
+        "a8128727dc0247b9adb45c0b538a9338"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Inspection of Wall-mounted Air Conditioning Unit",
+    "description": "The air conditioning unit appears intact and functional with no visible damage. The sealing around the pipe connection shows wear and should be checked by a qualified technician to ensure proper installation and prevent potential leaks.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Only visual inspection from one image of the indoor unit is possible.",
+    "No information is visible about the outdoor unit or internal components.",
+    "Cannot verify operational status or internal condition from the image."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "efca6abea3a44146aa658c3d0f5ef447",
+  "unit_id": "MC-B-1204",
+  "report": "Please inspect the air conditioning unit.",
+  "photos": [
+    {
+      "id": "a8128727dc0247b9adb45c0b538a9338",
+      "filename": "wall_ac.jpg",
+      "sha256": "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706",
+      "mime": "image/jpeg",
+      "stored_file": "a8128727dc0247b9adb45c0b538a9338.jpeg",
+      "quality_warnings": []
+    }
+  ],
+  "created_at": "2026-10-05T11:15:46.940089+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}

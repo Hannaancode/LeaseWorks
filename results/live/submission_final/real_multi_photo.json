@@ -1,0 +1,89 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 15.052,
+      "input_tokens": 5099,
+      "output_tokens": 279
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "Air Conditioning Unit",
+      "condition": "appears_new",
+      "visible_damage": "",
+      "explanation": "The air conditioning unit in image 0 appears to be in generally good condition with no visible damage. The unit looks clean and intact from the angle shown.",
+      "image_ids": [
+        "6ead14e82991490f99a780f517ff4cc4"
+      ]
+    },
+    {
+      "image_indexes": [
+        1
+      ],
+      "equipment": "Unidentified Equipment",
+      "condition": "damaged",
+      "visible_damage": "Severe rust and corrosion visible on metal surfaces, fins are bent and partially broken.",
+      "explanation": "Image 1 shows significant rust and corrosion on metal surfaces inside the equipment, as well as damaged fins. The type of equipment is not identified from the photo alone. This condition indicates deterioration and likely impaired function.",
+      "image_ids": [
+        "7ef05676014641c1ae15f4623e4aa49a"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Inspection of Air Conditioning Unit and Rusted Equipment",
+    "description": "Visual inspection of two pieces of equipment was conducted. The air conditioning unit appears intact and in good condition based on the exterior visible in image 0. The other equipment, shown in image 1, exhibits severe rust, corrosion, and bent fins. Professional inspection and likely repair or replacement is recommended for the rusty equipment. No immediate hazard is visually evident but the corrosion could impact operation.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Equipment identification in image 1 is not possible from photo alone.",
+    "Interior or operational condition of the air conditioner cannot be fully assessed from exterior image.",
+    "No electrical or functional testing done."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "78a8ca23c01046f19f34f5f4f95701e6",
+  "unit_id": "MC-B-1204",
+  "report": "Inspect the two photographed pieces of equipment.",
+  "photos": [
+    {
+      "id": "6ead14e82991490f99a780f517ff4cc4",
+      "filename": "wall_ac.jpg",
+      "sha256": "33da5e6614e8d28557257d1e0760629958e84da27484b17cf2b93efae41d8706",
+      "mime": "image/jpeg",
+      "stored_file": "6ead14e82991490f99a780f517ff4cc4.jpeg",
+      "quality_warnings": []
+    },
+    {
+      "id": "7ef05676014641c1ae15f4623e4aa49a",
+      "filename": "rusty_ac.jpg",
+      "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+      "mime": "image/jpeg",
+      "stored_file": "7ef05676014641c1ae15f4623e4aa49a.jpeg",
+      "quality_warnings": []
+    }
+  ],
+  "created_at": "2026-10-05T11:16:11.566018+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}
