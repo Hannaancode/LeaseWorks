@@ -1,0 +1,68 @@
+{
+  "model_calls": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 14.421,
+      "input_tokens": 2745,
+      "output_tokens": 189
+    }
+  ],
+  "observations": [
+    {
+      "image_indexes": [
+        0
+      ],
+      "equipment": "Metal housing and coil (likely HVAC condenser coil)",
+      "condition": "damaged",
+      "visible_damage": "Severe corrosion and rust on metal housing with multiple broken and bent coil fins observed.",
+      "explanation": "The image clearly shows extensive rust and corrosion on the metal housing along with visibly deteriorated coil fins, indicating damage. The extent of corrosion could compromise function or structural integrity. The image is taken very close up showing detailed damage but does not provide overall equipment context.",
+      "image_ids": [
+        "1a753b1745994b4bbb620cd54d475da2"
+      ]
+    }
+  ],
+  "work_order": {
+    "title": "Severe Corrosion and Damage to Coil and Metal Housing",
+    "description": "Inspection revealed significant rust and corrosion on the metal housing and broken fins on the coil. Recommend evaluation and repairs by qualified technician to prevent further deterioration or operational issues.",
+    "priority": "routine",
+    "decision": "pending"
+  },
+  "limitations": [
+    "Image shows only a close-up section; overall equipment condition unknown.",
+    "Cause of corrosion or internal condition of equipment cannot be determined from image."
+  ],
+  "trace": [
+    {
+      "step": "inspect",
+      "detail": "openai (live text + vision; gpt-4.1-mini)"
+    },
+    {
+      "step": "verify",
+      "detail": "Validate image references and typed condition labels"
+    },
+    {
+      "step": "draft",
+      "detail": "No vendor dispatch or financial commitment"
+    },
+    {
+      "step": "await_review",
+      "detail": "Owner can correct, accept or reject draft"
+    }
+  ],
+  "id": "642e8d9532b541e398653a2153332543",
+  "unit_id": "MC-B-1204",
+  "report": "Inspect the visible coil and metal housing.",
+  "photos": [
+    {
+      "id": "1a753b1745994b4bbb620cd54d475da2",
+      "filename": "rusty_ac.jpg",
+      "sha256": "1c29682ef29d0f6dd050a943fc794d567b78f8d3e7a44e7e5178af3b9326366d",
+      "mime": "image/jpeg",
+      "stored_file": "1a753b1745994b4bbb620cd54d475da2.jpeg",
+      "quality_warnings": []
+    }
+  ],
+  "created_at": "2026-10-05T12:05:58.151325+00:00",
+  "revision": 1,
+  "provider": "openai (live text + vision; gpt-4.1-mini)"
+}
