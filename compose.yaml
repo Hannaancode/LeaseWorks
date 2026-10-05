@@ -1,0 +1,12 @@
+services:
+  leaseworks:
+    build: .
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      MODEL_PROVIDER: ${MODEL_PROVIDER:-demo}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4.1-mini}
+    volumes:
+      - leaseworks-data:/app/var
+volumes:
+  leaseworks-data:
