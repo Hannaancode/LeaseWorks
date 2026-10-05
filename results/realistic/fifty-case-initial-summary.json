@@ -1,0 +1,723 @@
+{
+  "model": "gpt-4.1-mini",
+  "cases": [
+    {
+      "case": "qatar_manateq_blank",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [
+        "Unresolved invalid field types or citations"
+      ],
+      "sha256": "63b52918786062c0bc7b80d1a307bcc9b513a45a6e2ff18b2b0a255d69320ca8",
+      "fields": {
+        "landlord": "Economic Zones Company QSC (trading as Manateq)",
+        "tenant": null,
+        "unit_id": null,
+        "commencement_date": null,
+        "expiry_date": null,
+        "term_months": null,
+        "rent_amount": null,
+        "rent_frequency": "annual",
+        "currency": "QAR",
+        "monthly_rent": null,
+        "annual_rent": null,
+        "deposit_amount": null,
+        "escalation_clause": "present",
+        "escalation_defined": true,
+        "renewal_terms": "present",
+        "termination_terms": "present",
+        "landlord_signed": null,
+        "tenant_signed": null
+      },
+      "rules": {
+        "R1": "NOT_DETERMINABLE",
+        "R2": "PASS",
+        "R3": "NOT_DETERMINABLE",
+        "R4": "NOT_DETERMINABLE",
+        "R5": "NOT_DETERMINABLE",
+        "R6": "NOT_DETERMINABLE",
+        "R7": "NOT_DETERMINABLE"
+      },
+      "flag_kinds": [
+        "missing",
+        "model_concern",
+        "rule",
+        "unverified"
+      ],
+      "invalid_fields": [
+        "termination_terms"
+      ],
+      "citation_correction_count": 1,
+      "passed": false,
+      "repair_attempted": true
+    },
+    {
+      "case": "dubai_ejari_blank",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [],
+      "sha256": "33802759b47522a6ce3e2683f6c70acac0c256a304531b0a095952cdd4973925",
+      "fields": {
+        "landlord": null,
+        "tenant": null,
+        "unit_id": null,
+        "commencement_date": null,
+        "expiry_date": null,
+        "term_months": null,
+        "rent_amount": null,
+        "rent_frequency": null,
+        "currency": null,
+        "monthly_rent": null,
+        "annual_rent": null,
+        "deposit_amount": null,
+        "escalation_clause": null,
+        "escalation_defined": null,
+        "renewal_terms": null,
+        "termination_terms": null,
+        "landlord_signed": null,
+        "tenant_signed": null
+      },
+      "rules": {
+        "R1": "NOT_DETERMINABLE",
+        "R2": "NOT_DETERMINABLE",
+        "R3": "NOT_DETERMINABLE",
+        "R4": "NOT_DETERMINABLE",
+        "R5": "NOT_DETERMINABLE",
+        "R6": "NOT_DETERMINABLE",
+        "R7": "NOT_DETERMINABLE"
+      },
+      "flag_kinds": [
+        "missing",
+        "model_concern",
+        "rule"
+      ],
+      "invalid_fields": [],
+      "citation_correction_count": 0,
+      "passed": true,
+      "repair_attempted": false
+    },
+    {
+      "case": "queensland_form18a_blank",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [],
+      "sha256": "27bced98156ebcedfb021d2c7dd803e085afa1983fdccd38b66ad87a2700b015",
+      "fields": {
+        "landlord": null,
+        "tenant": null,
+        "unit_id": null,
+        "commencement_date": null,
+        "expiry_date": null,
+        "term_months": null,
+        "rent_amount": null,
+        "rent_frequency": null,
+        "currency": null,
+        "monthly_rent": null,
+        "annual_rent": null,
+        "deposit_amount": null,
+        "escalation_clause": null,
+        "escalation_defined": null,
+        "renewal_terms": null,
+        "termination_terms": "present",
+        "landlord_signed": null,
+        "tenant_signed": null
+      },
+      "rules": {
+        "R1": "NOT_DETERMINABLE",
+        "R2": "NOT_DETERMINABLE",
+        "R3": "NOT_DETERMINABLE",
+        "R4": "NOT_DETERMINABLE",
+        "R5": "NOT_DETERMINABLE",
+        "R6": "NOT_DETERMINABLE",
+        "R7": "NOT_DETERMINABLE"
+      },
+      "flag_kinds": [
+        "missing",
+        "model_concern",
+        "rule"
+      ],
+      "invalid_fields": [],
+      "citation_correction_count": 0,
+      "passed": true,
+      "repair_attempted": false
+    },
+    {
+      "case": "queensland_form18a_fictional_completion",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [
+        "rent_amount: expected '1000', got '1000.00'",
+        "deposit_amount: expected '4000', got '4000.00'",
+        "Unresolved invalid field types or citations"
+      ],
+      "sha256": "12953aeac93104bc4ec9f4ed8ef0a234162dcc77270e75a550c470a464b8d3f5",
+      "fields": {
+        "landlord": "Example Property Owner Ltd (fictional)",
+        "tenant": "Example Tenant (fictional)",
+        "unit_id": "MC-B-1204",
+        "commencement_date": "2026-11-01",
+        "expiry_date": "2027-10-31",
+        "term_months": 12,
+        "rent_amount": "1000.00",
+        "rent_frequency": "weekly",
+        "currency": "AUD",
+        "monthly_rent": null,
+        "annual_rent": null,
+        "deposit_amount": "4000.00",
+        "escalation_clause": null,
+        "escalation_defined": null,
+        "renewal_terms": null,
+        "termination_terms": "present",
+        "landlord_signed": false,
+        "tenant_signed": false
+      },
+      "rules": {
+        "R1": "NOT_DETERMINABLE",
+        "R2": "NOT_DETERMINABLE",
+        "R3": "PASS",
+        "R4": "PASS",
+        "R5": "FAIL",
+        "R6": "NOT_DETERMINABLE",
+        "R7": "PASS"
+      },
+      "flag_kinds": [
+        "missing",
+        "model_concern",
+        "rule",
+        "unverified"
+      ],
+      "invalid_fields": [
+        "termination_terms"
+      ],
+      "citation_correction_count": 0,
+      "passed": false,
+      "repair_attempted": true
+    },
+    {
+      "case": "qatar_residential_unsigned",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [],
+      "sha256": "0050cbbfecf42f00a0574dd555c69a9fa19396d5961d34a5e948eac04678e649",
+      "fields": {
+        "landlord": "Marina Crest Holdings LLC",
+        "tenant": "Example Tenant",
+        "unit_id": "MC-B-1204",
+        "commencement_date": "2026-11-01",
+        "expiry_date": "2027-10-31",
+        "term_months": 12,
+        "rent_amount": "8500",
+        "rent_frequency": "monthly",
+        "currency": "QAR",
+        "monthly_rent": "8500",
+        "annual_rent": "102000",
+        "deposit_amount": "8500",
+        "escalation_clause": "present",
+        "escalation_defined": true,
+        "renewal_terms": "present",
+        "termination_terms": "present",
+        "landlord_signed": false,
+        "tenant_signed": false
+      },
+      "rules": {
+        "R1": "PASS",
+        "R2": "PASS",
+        "R3": "PASS",
+        "R4": "PASS",
+        "R5": "FAIL",
+        "R6": "PASS",
+        "R7": "PASS"
+      },
+      "flag_kinds": [
+        "rule"
+      ],
+      "invalid_fields": [],
+      "citation_correction_count": 0,
+      "passed": true,
+      "repair_attempted": false
+    },
+    {
+      "case": "qatar_bilingual_unsigned",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [],
+      "sha256": "1016bd9d765e7d3925872fa25701ae174d4354570e2db07c1924fdd5f60c9bcc",
+      "fields": {
+        "landlord": "Marina Crest Holdings LLC",
+        "tenant": "Example Tenant",
+        "unit_id": "MC-B-1204",
+        "commencement_date": "2026-11-01",
+        "expiry_date": "2027-10-31",
+        "term_months": 12,
+        "rent_amount": "8500",
+        "rent_frequency": "monthly",
+        "currency": "QAR",
+        "monthly_rent": "8500",
+        "annual_rent": "102000",
+        "deposit_amount": "8500",
+        "escalation_clause": "present",
+        "escalation_defined": true,
+        "renewal_terms": "present",
+        "termination_terms": "present",
+        "landlord_signed": false,
+        "tenant_signed": false
+      },
+      "rules": {
+        "R1": "PASS",
+        "R2": "PASS",
+        "R3": "PASS",
+        "R4": "PASS",
+        "R5": "FAIL",
+        "R6": "PASS",
+        "R7": "PASS"
+      },
+      "flag_kinds": [
+        "rule"
+      ],
+      "invalid_fields": [],
+      "citation_correction_count": 0,
+      "passed": true,
+      "repair_attempted": false
+    },
+    {
+      "case": "qatar_quarterly",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [],
+      "sha256": "9508d26fb945c9c2fed3ce3f681d5356b821a8d64301c0999ff20b4156d1e6ac",
+      "fields": {
+        "landlord": "Marina Crest Holdings LLC",
+        "tenant": "Example Tenant",
+        "unit_id": "MC-B-1204",
+        "commencement_date": "2026-11-01",
+        "expiry_date": "2027-10-31",
+        "term_months": 12,
+        "rent_amount": "25500",
+        "rent_frequency": "quarterly",
+        "currency": "QAR",
+        "monthly_rent": null,
+        "annual_rent": null,
+        "deposit_amount": "8500",
+        "escalation_clause": "present",
+        "escalation_defined": true,
+        "renewal_terms": "present",
+        "termination_terms": "present",
+        "landlord_signed": false,
+        "tenant_signed": false
+      },
+      "rules": {
+        "R1": "NOT_DETERMINABLE",
+        "R2": "PASS",
+        "R3": "PASS",
+        "R4": "PASS",
+        "R5": "FAIL",
+        "R6": "NOT_DETERMINABLE",
+        "R7": "PASS"
+      },
+      "flag_kinds": [
+        "missing",
+        "model_concern",
+        "rule"
+      ],
+      "invalid_fields": [],
+      "citation_correction_count": 0,
+      "passed": true,
+      "repair_attempted": false
+    },
+    {
+      "case": "qatar_unmatched",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [],
+      "sha256": "ceb5ff4f70acf6624d3debde55e6546ae75bd777b3f550010c16e248d6f6129d",
+      "fields": {
+        "landlord": "Marina Crest Holdings LLC",
+        "tenant": "Example Tenant",
+        "unit_id": "DOHA-EXTERNAL-999",
+        "commencement_date": "2026-11-01",
+        "expiry_date": "2027-10-31",
+        "term_months": 12,
+        "rent_amount": "8500",
+        "rent_frequency": "monthly",
+        "currency": "QAR",
+        "monthly_rent": "8500",
+        "annual_rent": "102000",
+        "deposit_amount": "8500",
+        "escalation_clause": "present",
+        "escalation_defined": true,
+        "renewal_terms": "present",
+        "termination_terms": "present",
+        "landlord_signed": false,
+        "tenant_signed": false
+      },
+      "rules": {
+        "R1": "PASS",
+        "R2": "PASS",
+        "R3": "PASS",
+        "R4": "PASS",
+        "R5": "FAIL",
+        "R6": "PASS",
+        "R7": "FAIL"
+      },
+      "flag_kinds": [
+        "rule"
+      ],
+      "invalid_fields": [],
+      "citation_correction_count": 0,
+      "passed": true,
+      "repair_attempted": false
+    },
+    {
+      "case": "us_periodic_unsigned",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [],
+      "sha256": "033996e74cef8a72d0854e8e6821463673ef26ad665391220d79d5e79c33ffe5",
+      "fields": {
+        "landlord": "Example Property Owner LLC",
+        "tenant": "Example Resident",
+        "unit_id": "EXTERNAL-US-12",
+        "commencement_date": "2026-11-01",
+        "expiry_date": null,
+        "term_months": null,
+        "rent_amount": "1200",
+        "rent_frequency": "monthly",
+        "currency": "USD",
+        "monthly_rent": "1200",
+        "annual_rent": null,
+        "deposit_amount": "600",
+        "escalation_clause": "present",
+        "escalation_defined": false,
+        "renewal_terms": "present",
+        "termination_terms": "present",
+        "landlord_signed": false,
+        "tenant_signed": false
+      },
+      "rules": {
+        "R1": "FAIL",
+        "R2": "FAIL",
+        "R3": "NOT_DETERMINABLE",
+        "R4": "NOT_DETERMINABLE",
+        "R5": "FAIL",
+        "R6": "NOT_DETERMINABLE",
+        "R7": "FAIL"
+      },
+      "flag_kinds": [
+        "missing",
+        "rule"
+      ],
+      "invalid_fields": [],
+      "citation_correction_count": 0,
+      "passed": true,
+      "repair_attempted": false
+    },
+    {
+      "case": "qatar_currency_conflict",
+      "kind": "lease",
+      "http_status": 201,
+      "mismatches": [],
+      "sha256": "53d086848372e6538b2ee55d129271751365a8a238cead4a7e8fb479f2ec6d5c",
+      "fields": {
+        "landlord": "Marina Crest Holdings LLC",
+        "tenant": "Example Tenant",
+        "unit_id": "MC-B-1204",
+        "commencement_date": "2026-11-01",
+        "expiry_date": "2027-10-31",
+        "term_months": 12,
+        "rent_amount": null,
+        "rent_frequency": "monthly",
+        "currency": null,
+        "monthly_rent": null,
+        "annual_rent": null,
+        "deposit_amount": null,
+        "escalation_clause": "present",
+        "escalation_defined": true,
+        "renewal_terms": "present",
+        "termination_terms": "present",
+        "landlord_signed": false,
+        "tenant_signed": false
+      },
+      "rules": {
+        "R1": "NOT_DETERMINABLE",
+        "R2": "PASS",
+        "R3": "PASS",
+        "R4": "PASS",
+        "R5": "FAIL",
+        "R6": "NOT_DETERMINABLE",
+        "R7": "PASS"
+      },
+      "flag_kinds": [
+        "currency_conflict",
+        "model_concern",
+        "rule"
+      ],
+      "invalid_fields": [],
+      "citation_correction_count": 0,
+      "passed": true,
+      "repair_attempted": false
+    },
+    {
+      "case": "qatar_qstp_49_page_limit",
+      "kind": "lease_limit",
+      "http_status": 422,
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "case": "real_ac_single",
+      "kind": "vision",
+      "http_status": 201,
+      "mismatches": [],
+      "image_count": 1,
+      "covered_indexes": [
+        0
+      ],
+      "equipment": [
+        "Wall-mounted air conditioner unit"
+      ],
+      "conditions": [
+        "appears_new"
+      ],
+      "passed": true
+    },
+    {
+      "case": "real_corrosion_single",
+      "kind": "vision",
+      "http_status": 201,
+      "mismatches": [],
+      "image_count": 1,
+      "covered_indexes": [
+        0
+      ],
+      "equipment": [
+        "Metal heat exchanger coil and surrounding metal panel"
+      ],
+      "conditions": [
+        "damaged"
+      ],
+      "passed": true
+    },
+    {
+      "case": "real_photo_pair",
+      "kind": "vision",
+      "http_status": 201,
+      "mismatches": [],
+      "image_count": 2,
+      "covered_indexes": [
+        0,
+        1
+      ],
+      "equipment": [
+        "Wall-mounted air conditioning unit",
+        "Unidentified metal equipment (likely HVAC coil or condenser)"
+      ],
+      "conditions": [
+        "appears_new",
+        "damaged"
+      ],
+      "passed": true
+    },
+    {
+      "case": "real_water_heater",
+      "kind": "vision",
+      "http_status": 201,
+      "mismatches": [],
+      "image_count": 1,
+      "covered_indexes": [
+        0
+      ],
+      "equipment": [
+        "Water heater"
+      ],
+      "conditions": [
+        "appears_new"
+      ],
+      "passed": true
+    },
+    {
+      "case": "real_faucet",
+      "kind": "vision",
+      "http_status": 201,
+      "mismatches": [],
+      "image_count": 1,
+      "covered_indexes": [
+        0
+      ],
+      "equipment": [
+        "faucet"
+      ],
+      "conditions": [
+        "appears_new"
+      ],
+      "passed": true
+    },
+    {
+      "case": "real_four_photo_coverage",
+      "kind": "vision",
+      "http_status": 201,
+      "mismatches": [],
+      "image_count": 4,
+      "covered_indexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "equipment": [
+        "wall-mounted air conditioner unit",
+        "unknown metal equipment (possibly HVAC coil or radiator)",
+        "water heater",
+        "sink faucet"
+      ],
+      "conditions": [
+        "appears_new",
+        "damaged",
+        "appears_new",
+        "appears_new"
+      ],
+      "passed": true
+    }
+  ],
+  "passed": 15,
+  "total": 17,
+  "calls": 18,
+  "usage": [
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 16.802,
+      "input_tokens": 12606,
+      "output_tokens": 1262
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 16.562,
+      "input_tokens": 14330,
+      "output_tokens": 1260
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 10.902,
+      "input_tokens": 6845,
+      "output_tokens": 610
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 12.901,
+      "input_tokens": 13648,
+      "output_tokens": 1072
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 14.323,
+      "input_tokens": 14061,
+      "output_tokens": 1419
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 20.545,
+      "input_tokens": 15961,
+      "output_tokens": 1423
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 12.753,
+      "input_tokens": 1339,
+      "output_tokens": 1009
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 16.952,
+      "input_tokens": 1456,
+      "output_tokens": 1027
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 12.396,
+      "input_tokens": 1337,
+      "output_tokens": 1042
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 13.31,
+      "input_tokens": 1341,
+      "output_tokens": 1007
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 12.547,
+      "input_tokens": 1248,
+      "output_tokens": 945
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 10.992,
+      "input_tokens": 1338,
+      "output_tokens": 1019
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 13.963,
+      "input_tokens": 2742,
+      "output_tokens": 163
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 14.788,
+      "input_tokens": 2750,
+      "output_tokens": 187
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 12.218,
+      "input_tokens": 5098,
+      "output_tokens": 253
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 12.847,
+      "input_tokens": 2742,
+      "output_tokens": 168
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 13.004,
+      "input_tokens": 2803,
+      "output_tokens": 155
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "latency_seconds": 18.861,
+      "input_tokens": 9860,
+      "output_tokens": 356
+    }
+  ],
+  "estimated_usd_at_uncached_rates": "0.0676052",
+  "sources": [
+    {
+      "file": "qatar_manateq_blank.pdf",
+      "url": "https://manateq.qa/wp-content/uploads/2025/01/%D8%B9%D9%82%D8%AF-%D8%A7%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1-%D9%85%D8%B3%D9%8A%D8%B9%D9%8A%D8%AF-1.pdf",
+      "sha256": "63b52918786062c0bc7b80d1a307bcc9b513a45a6e2ff18b2b0a255d69320ca8",
+      "kind": "Qatar bilingual commercial plot lease, blank template"
+    },
+    {
+      "file": "dubai_ejari_blank.pdf",
+      "url": "https://dubailand.gov.ae/media/nijhtrss/ejari_unified_tenancy_contract.pdf",
+      "sha256": "33802759b47522a6ce3e2683f6c70acac0c256a304531b0a095952cdd4973925",
+      "kind": "Dubai bilingual unified residential/commercial tenancy, blank template"
+    },
+    {
+      "file": "queensland_form18a_blank.pdf",
+      "url": "https://www.rta.qld.gov.au/sites/default/files/2021-06/Form-18a-General-tenancy-agreement.pdf",
+      "sha256": "27bced98156ebcedfb021d2c7dd803e085afa1983fdccd38b66ad87a2700b015",
+      "kind": "Queensland residential tenancy, blank interactive template"
+    },
+    {
+      "file": "qatar_qstp_blank.pdf",
+      "url": "https://qstp.qa/wp-content/uploads/2024/12/7-qstp-lease-agreement-24dec14.pdf",
+      "sha256": "60696a705e1f225418f527b706769d34cbae690fe44b8d5035f2b518b3a31539",
+      "kind": "Qatar commercial free-zone lease, blank 49-page template; expected size-limit rejection"
+    }
+  ],
+  "scope": "Original public blank PDFs, fictional completions/narratives and attributed real photographs; not executed leases or legal compliance verification.",
+  "recording_note": "Compact receipt: publishers clause text and rejected quotes omitted; full proposals remain in ignored local evaluation output."
+}
